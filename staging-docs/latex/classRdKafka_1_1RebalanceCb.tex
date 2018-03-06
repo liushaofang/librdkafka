@@ -1,0 +1,66 @@
+\hypertarget{classRdKafka_1_1RebalanceCb}{
+\section{RdKafka::RebalanceCb Class Reference}
+\label{classRdKafka_1_1RebalanceCb}\index{RdKafka::RebalanceCb@{RdKafka::RebalanceCb}}
+}
+
+
+{\bfseries KafkaConsunmer:} Rebalance callback class  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRdKafka_1_1RebalanceCb_a490a91c52724382a72380af621958741}{rebalance\_\-cb} (\hyperlink{classRdKafka_1_1KafkaConsumer}{RdKafka::KafkaConsumer} $\ast$consumer, RdKafka::ErrorCode err, std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions)=0
+\begin{DoxyCompactList}\small\item\em Group rebalance callback for use with RdKafka::KafkaConsunmer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\bfseries KafkaConsunmer:} Rebalance callback class 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1RebalanceCb_a490a91c52724382a72380af621958741}{
+\index{RdKafka::RebalanceCb@{RdKafka::RebalanceCb}!rebalance\_\-cb@{rebalance\_\-cb}}
+\index{rebalance\_\-cb@{rebalance\_\-cb}!RdKafka::RebalanceCb@{RdKafka::RebalanceCb}}
+\subsubsection[{rebalance\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RdKafka::RebalanceCb::rebalance\_\-cb ({\bf RdKafka::KafkaConsumer} $\ast$ {\em consumer}, \/  RdKafka::ErrorCode {\em err}, \/  std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em partitions})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1RebalanceCb_a490a91c52724382a72380af621958741}
+
+
+Group rebalance callback for use with RdKafka::KafkaConsunmer. Registering a {\ttfamily rebalance\_\-cb} turns off librdkafka's automatic partition assignment/revocation and instead delegates that responsibility to the application's {\ttfamily rebalance\_\-cb}.
+
+The rebalance callback is responsible for updating librdkafka's assignment set based on the two events: RdKafka::ERR\_\-\_\-ASSIGN\_\-PARTITIONS and RdKafka::ERR\_\-\_\-REVOKE\_\-PARTITIONS but should also be able to handle arbitrary rebalancing failures where {\ttfamily err} is neither of those. \begin{DoxyRemark}{Remarks}
+In this latter case (arbitrary error), the application must call unassign() to synchronize state.
+\end{DoxyRemark}
+Without a rebalance callback this is done automatically by librdkafka but registering a rebalance callback gives the application flexibility in performing other operations along with the assinging/revocation, such as fetching offsets from an alternate location (on assign) or manually committing offsets (on revoke).
+
+The following example show's the application's responsibilities: 
+\begin{DoxyCode}
+    class MyRebalanceCb : public RdKafka::RebalanceCb {
+     public:
+      void rebalance_cb (RdKafka::KafkaConsumer *consumer,
+              RdKafka::ErrorCode err,
+                  std::vector<RdKafka::TopicPartition*> &partitions) {
+         if (err == RdKafka::ERR__ASSIGN_PARTITIONS) {
+           // application may load offets from arbitrary external
+           // storage here and update \p partitions
+
+           consumer->assign(partitions);
+
+         } else if (err == RdKafka::ERR__REVOKE_PARTITIONS) {
+           // Application may commit offsets manually here
+           // if auto.commit.enable=false
+
+           consumer->unassign();
+
+         } else {
+           std::cerr << "Rebalancing error: <<
+                        RdKafka::err2str(err) << std::endl;
+           consumer->unassign();
+         }
+     }
+  }
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

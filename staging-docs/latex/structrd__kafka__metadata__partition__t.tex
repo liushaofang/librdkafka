@@ -1,0 +1,72 @@
+\hypertarget{structrd__kafka__metadata__partition__t}{
+\section{rd\_\-kafka\_\-metadata\_\-partition\_\-t Struct Reference}
+\label{structrd__kafka__metadata__partition__t}\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+}
+
+
+Partition information.  
+
+
+{\ttfamily \#include $<$rdkafka.h$>$}\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int32\_\-t \hyperlink{structrd__kafka__metadata__partition__t_ad76c23a795a752dfdea2ca69236e7f29}{id}
+\item 
+\hyperlink{rdkafka_8h_a03509bab51072c72a8dcf52337e6d5cb}{rd\_\-kafka\_\-resp\_\-err\_\-t} \hyperlink{structrd__kafka__metadata__partition__t_abc667de1e28c6be4aece698806ca6e09}{err}
+\item 
+int32\_\-t \hyperlink{structrd__kafka__metadata__partition__t_a6c068b9f40bae19de020ce0c8cfc8053}{leader}
+\item 
+int \hyperlink{structrd__kafka__metadata__partition__t_a999ac89d23012cfc5ba8acc351300506}{replica\_\-cnt}
+\item 
+int32\_\-t $\ast$ \hyperlink{structrd__kafka__metadata__partition__t_ae06053cbbeb9bdcf324606cf19a00e7f}{replicas}
+\item 
+int \hyperlink{structrd__kafka__metadata__partition__t_ac49c0e74551f6398bfa04245b49230d8}{isr\_\-cnt}
+\item 
+int32\_\-t $\ast$ \hyperlink{structrd__kafka__metadata__partition__t_a82d9888272c26a78836f12827ffc1a64}{isrs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Partition information. 
+
+\subsection{Field Documentation}
+\hypertarget{structrd__kafka__metadata__partition__t_ad76c23a795a752dfdea2ca69236e7f29}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!id@{id}}
+\index{id@{id}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::id}}}
+\label{structrd__kafka__metadata__partition__t_ad76c23a795a752dfdea2ca69236e7f29}
+Partition Id \hypertarget{structrd__kafka__metadata__partition__t_abc667de1e28c6be4aece698806ca6e09}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!err@{err}}
+\index{err@{err}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rd\_\-kafka\_\-resp\_\-err\_\-t} {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::err}}}
+\label{structrd__kafka__metadata__partition__t_abc667de1e28c6be4aece698806ca6e09}
+Partition error reported by broker \hypertarget{structrd__kafka__metadata__partition__t_a6c068b9f40bae19de020ce0c8cfc8053}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!leader@{leader}}
+\index{leader@{leader}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{leader}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::leader}}}
+\label{structrd__kafka__metadata__partition__t_a6c068b9f40bae19de020ce0c8cfc8053}
+Leader broker \hypertarget{structrd__kafka__metadata__partition__t_a999ac89d23012cfc5ba8acc351300506}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!replica\_\-cnt@{replica\_\-cnt}}
+\index{replica\_\-cnt@{replica\_\-cnt}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{replica\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::replica\_\-cnt}}}
+\label{structrd__kafka__metadata__partition__t_a999ac89d23012cfc5ba8acc351300506}
+Number of brokers in {\ttfamily replicas} \hypertarget{structrd__kafka__metadata__partition__t_ae06053cbbeb9bdcf324606cf19a00e7f}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!replicas@{replicas}}
+\index{replicas@{replicas}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{replicas}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t$\ast$ {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::replicas}}}
+\label{structrd__kafka__metadata__partition__t_ae06053cbbeb9bdcf324606cf19a00e7f}
+Replica brokers \hypertarget{structrd__kafka__metadata__partition__t_ac49c0e74551f6398bfa04245b49230d8}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!isr\_\-cnt@{isr\_\-cnt}}
+\index{isr\_\-cnt@{isr\_\-cnt}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{isr\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::isr\_\-cnt}}}
+\label{structrd__kafka__metadata__partition__t_ac49c0e74551f6398bfa04245b49230d8}
+Number of ISR brokers in {\ttfamily isrs} \hypertarget{structrd__kafka__metadata__partition__t_a82d9888272c26a78836f12827ffc1a64}{
+\index{rd\_\-kafka\_\-metadata\_\-partition\_\-t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}!isrs@{isrs}}
+\index{isrs@{isrs}!rd_kafka_metadata_partition_t@{rd\_\-kafka\_\-metadata\_\-partition\_\-t}}
+\subsubsection[{isrs}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t$\ast$ {\bf rd\_\-kafka\_\-metadata\_\-partition\_\-t::isrs}}}
+\label{structrd__kafka__metadata__partition__t_a82d9888272c26a78836f12827ffc1a64}
+In-\/Sync-\/Replica brokers 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{rdkafka_8h}{rdkafka.h}\end{DoxyCompactItemize}

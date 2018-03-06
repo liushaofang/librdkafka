@@ -1,0 +1,326 @@
+\hypertarget{classRdKafka_1_1KafkaConsumer}{
+\section{RdKafka::KafkaConsumer Class Reference}
+\label{classRdKafka_1_1KafkaConsumer}\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+}
+
+
+High-\/level \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer} (for brokers 0.9 and later).  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}Inheritance diagram for RdKafka::KafkaConsumer:Collaboration diagram for RdKafka::KafkaConsumer:\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}{assignment} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{RdKafka::TopicPartition} $\ast$ $>$ \&partitions)=0}
+\label{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}
+
+\begin{DoxyCompactList}\small\item\em Returns the current partition assignment as set by \hyperlink{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}{RdKafka::KafkaConsumer::assign()}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a470f95d195c1c0dc9466040cdf1ec12d}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a470f95d195c1c0dc9466040cdf1ec12d}{subscription} (std::vector$<$ std::string $>$ \&topics)=0}
+\label{classRdKafka_1_1KafkaConsumer_a470f95d195c1c0dc9466040cdf1ec12d}
+
+\begin{DoxyCompactList}\small\item\em Returns the current subscription as set by \hyperlink{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}{RdKafka::KafkaConsumer::subscribe()}. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}{subscribe} (const std::vector$<$ std::string $>$ \&topics)=0
+\begin{DoxyCompactList}\small\item\em Update the subscription set to {\ttfamily topics}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a933d7e1d8bceab2422463ee8b335f15b}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a933d7e1d8bceab2422463ee8b335f15b}{unsubscribe} ()=0}
+\label{classRdKafka_1_1KafkaConsumer_a933d7e1d8bceab2422463ee8b335f15b}
+
+\begin{DoxyCompactList}\small\item\em Unsubscribe from the current subscription set. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}{assign} (const std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions)=0
+\begin{DoxyCompactList}\small\item\em Update the assignment set to {\ttfamily partitions}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a21dc83bc3eb00e2b4e0f6373244976b6}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a21dc83bc3eb00e2b4e0f6373244976b6}{unassign} ()=0}
+\label{classRdKafka_1_1KafkaConsumer_a21dc83bc3eb00e2b4e0f6373244976b6}
+
+\begin{DoxyCompactList}\small\item\em Stop consumption and remove the current assignment. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{consume} (int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Consume message or get error event, triggers callbacks. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a1c421bf2b44509704ad3d9e785c5b15c}{commitSync} ()=0
+\begin{DoxyCompactList}\small\item\em Commit offsets for the current assignment. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a6d68b1b8d21dc26499938cb6e529f928}{commitAsync} ()=0
+\begin{DoxyCompactList}\small\item\em Asynchronous version of RdKafka::KafkaConsumer::CommitSync(). \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_ac5d1b4fcadea749b774ab1cdd62de2d1}{commitSync} (\hyperlink{classRdKafka_1_1Message}{Message} $\ast$message)=0
+\begin{DoxyCompactList}\small\item\em Commit offset for a single topic+partition based on {\ttfamily message}. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a278db6d20ebcaf501af9487c0957d57f}{commitAsync} (\hyperlink{classRdKafka_1_1Message}{Message} $\ast$message)=0
+\begin{DoxyCompactList}\small\item\em Commit offset for a single topic+partition based on {\ttfamily message}. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a892f5ec51f898b67a19d892b9ab08177}{commitSync} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&offsets)=0
+\begin{DoxyCompactList}\small\item\em Commit offsets for the provided list of partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a66a2c7639521e0c9eb25c3417921e318}{commitAsync} (const std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&offsets)=0
+\begin{DoxyCompactList}\small\item\em Commit offset for the provided list of partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a6791befdd7d705be26e5ed69cf219376}{commitSync} (\hyperlink{classRdKafka_1_1OffsetCommitCb}{OffsetCommitCb} $\ast$offset\_\-commit\_\-cb)=0
+\begin{DoxyCompactList}\small\item\em Commit offsets for the current assignment. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_aaa28c44fe9505f48644f06f49403fcc3}{commitSync} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&offsets, \hyperlink{classRdKafka_1_1OffsetCommitCb}{OffsetCommitCb} $\ast$offset\_\-commit\_\-cb)=0
+\begin{DoxyCompactList}\small\item\em Commit offsets for the provided list of partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_aad4b300803fd1c9403c165b9a6431612}{committed} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Retrieve committed offsets for topics+partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a49705c19baac7e00f6558fb7b4410a57}{position} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions)=0
+\begin{DoxyCompactList}\small\item\em Retrieve current positions (offsets) for topics+partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_a5c78a721aa91f3be9903f09ddf084644}{close} ()=0
+\begin{DoxyCompactList}\small\item\em Close and shut down the proper. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_ab08a9a8175edd12ae4e1d5bb0eb50479}{seek} (const \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} \&partition, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Seek consumer for topic+partition to offset which is either an absolute or logical offset. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1KafkaConsumer_ab693da27c7664692d2247398d483e931}{offsets\_\-store} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&offsets)=0
+\begin{DoxyCompactList}\small\item\em Store offset {\ttfamily offset} for topic partition {\ttfamily partition}. The offset will be committed (written) to the offset store according to {\ttfamily auto.commit.interval.ms} or the next manual offset-\/less commit$\ast$(). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer} $\ast$ \hyperlink{classRdKafka_1_1KafkaConsumer_ac32a5eb3474b3315635cb1d39794d068}{create} (\hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std::string \&errstr)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+High-\/level \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer} (for brokers 0.9 and later). \begin{DoxyRemark}{Remarks}
+Requires Apache Kafka $>$= 0.9.0 brokers
+\end{DoxyRemark}
+Currently supports the {\ttfamily range} and {\ttfamily roundrobin} partition assignment strategies (see {\ttfamily partition.assignment.strategy}) 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1KafkaConsumer_ac32a5eb3474b3315635cb1d39794d068}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!create@{create}}
+\index{create@{create}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf KafkaConsumer}$\ast$ RdKafka::KafkaConsumer::create ({\bf Conf} $\ast$ {\em conf}, \/  std::string \& {\em errstr})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_ac32a5eb3474b3315635cb1d39794d068}
+
+
+Creates a \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer}. The {\ttfamily conf} object must have {\ttfamily group.id} set to the consumer group to join.
+
+Use \hyperlink{classRdKafka_1_1KafkaConsumer_a5c78a721aa91f3be9903f09ddf084644}{RdKafka::KafkaConsumer::close()} to shut down the consumer.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1RebalanceCb}{RdKafka::RebalanceCb} 
+
+CONFIGURATION.md for {\ttfamily group.id}, {\ttfamily session.timeout.ms}, {\ttfamily partition.assignment.strategy}, etc. 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::subscribe (const std::vector$<$ std::string $>$ \& {\em topics})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}
+
+
+Update the subscription set to {\ttfamily topics}. Any previous subscription will be unassigned and unsubscribed first.
+
+The subscription set denotes the desired topics to consume and this set is provided to the partition assignor (one of the elected group members) for all clients which then uses the configured {\ttfamily partition.assignment.strategy} to assign the subscription sets's topics's partitions to the consumers, depending on their subscription.
+
+The result of such an assignment is a rebalancing which is either handled automatically in librdkafka or can be overriden by the application by providing a \hyperlink{classRdKafka_1_1RebalanceCb}{RdKafka::RebalanceCb}.
+
+The rebalancing passes the assigned partition set to \hyperlink{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}{RdKafka::KafkaConsumer::assign()} to update what partitions are actually being fetched by the \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer}.
+
+Regex pattern matching automatically performed for topics prefixed with {\ttfamily $\backslash$\char`\"{}$^\wedge$$\backslash$\char`\"{}} (e.g. {\ttfamily $\backslash$\char`\"{}$^\wedge$myPfx\mbox{[}0-\/9\mbox{]}\_\-.$\ast$$\backslash$\char`\"{}} 
+
+\begin{DoxyReturn}{Returns}
+an error if the provided list of topics is invalid. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!assign@{assign}}
+\index{assign@{assign}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::assign (const std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em partitions})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}
+
+
+Update the assignment set to {\ttfamily partitions}. The assignment set is the set of partitions actually being consumed by the \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer}. \hypertarget{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!consume@{consume}}
+\index{consume@{consume}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Message}$\ast$ RdKafka::KafkaConsumer::consume (int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}
+
+
+Consume message or get error event, triggers callbacks. Will automatically call registered callbacks for any such queued events, including \hyperlink{classRdKafka_1_1RebalanceCb}{RdKafka::RebalanceCb}, \hyperlink{classRdKafka_1_1EventCb}{RdKafka::EventCb}, \hyperlink{classRdKafka_1_1OffsetCommitCb}{RdKafka::OffsetCommitCb}, etc.
+
+\begin{DoxyRemark}{Remarks}
+Use {\ttfamily delete} to free the message.
+
+An application should make sure to call \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{consume()} at regular intervals, even if no messages are expected, to serve any queued callbacks waiting to be called. This is especially important when a \hyperlink{classRdKafka_1_1RebalanceCb}{RebalanceCb} has been registered as it needs to be called and handled properly to synchronize internal consumer state.
+
+Application MUST NOT call {\ttfamily \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll()}} on \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer} objects.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+One of:
+\begin{DoxyItemize}
+\item proper message (\hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} is ERR\_\-NO\_\-ERROR)
+\item error event (\hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} is != ERR\_\-NO\_\-ERROR)
+\item timeout due to no message or event in {\ttfamily timeout\_\-ms} (\hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} is ERR\_\-\_\-TIMED\_\-OUT) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a1c421bf2b44509704ad3d9e785c5b15c}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitSync@{commitSync}}
+\index{commitSync@{commitSync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitSync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitSync ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a1c421bf2b44509704ad3d9e785c5b15c}
+
+
+Commit offsets for the current assignment. \begin{DoxyRemark}{Remarks}
+This is the synchronous variant that blocks until offsets are committed or the commit fails (see return value).
+
+If a \hyperlink{classRdKafka_1_1OffsetCommitCb}{RdKafka::OffsetCommitCb} callback is registered it will be called with commit details on a future call to \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{RdKafka::KafkaConsumer::consume()}
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+ERR\_\-NO\_\-ERROR or error code. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a6d68b1b8d21dc26499938cb6e529f928}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitAsync@{commitAsync}}
+\index{commitAsync@{commitAsync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitAsync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitAsync ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a6d68b1b8d21dc26499938cb6e529f928}
+
+
+Asynchronous version of RdKafka::KafkaConsumer::CommitSync(). \begin{DoxySeeAlso}{See also}
+RdKafka::KafkaConsummer::commitSync() 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1KafkaConsumer_ac5d1b4fcadea749b774ab1cdd62de2d1}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitSync@{commitSync}}
+\index{commitSync@{commitSync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitSync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitSync ({\bf Message} $\ast$ {\em message})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_ac5d1b4fcadea749b774ab1cdd62de2d1}
+
+
+Commit offset for a single topic+partition based on {\ttfamily message}. \begin{DoxyRemark}{Remarks}
+This is the synchronous variant.
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See also}
+RdKafka::KafkaConsummer::commitSync() 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a278db6d20ebcaf501af9487c0957d57f}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitAsync@{commitAsync}}
+\index{commitAsync@{commitAsync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitAsync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitAsync ({\bf Message} $\ast$ {\em message})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a278db6d20ebcaf501af9487c0957d57f}
+
+
+Commit offset for a single topic+partition based on {\ttfamily message}. \begin{DoxyRemark}{Remarks}
+This is the asynchronous variant.
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See also}
+RdKafka::KafkaConsummer::commitSync() 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a892f5ec51f898b67a19d892b9ab08177}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitSync@{commitSync}}
+\index{commitSync@{commitSync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitSync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitSync (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em offsets})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a892f5ec51f898b67a19d892b9ab08177}
+
+
+Commit offsets for the provided list of partitions. \begin{DoxyRemark}{Remarks}
+This is the synchronous variant. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a66a2c7639521e0c9eb25c3417921e318}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitAsync@{commitAsync}}
+\index{commitAsync@{commitAsync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitAsync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitAsync (const std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em offsets})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a66a2c7639521e0c9eb25c3417921e318}
+
+
+Commit offset for the provided list of partitions. \begin{DoxyRemark}{Remarks}
+This is the asynchronous variant. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a6791befdd7d705be26e5ed69cf219376}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitSync@{commitSync}}
+\index{commitSync@{commitSync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitSync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitSync ({\bf OffsetCommitCb} $\ast$ {\em offset\_\-commit\_\-cb})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a6791befdd7d705be26e5ed69cf219376}
+
+
+Commit offsets for the current assignment. \begin{DoxyRemark}{Remarks}
+This is the synchronous variant that blocks until offsets are committed or the commit fails (see return value).
+
+The provided callback will be called from this function.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+ERR\_\-NO\_\-ERROR or error code. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_aaa28c44fe9505f48644f06f49403fcc3}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!commitSync@{commitSync}}
+\index{commitSync@{commitSync}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{commitSync}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::commitSync (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em offsets}, \/  {\bf OffsetCommitCb} $\ast$ {\em offset\_\-commit\_\-cb})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_aaa28c44fe9505f48644f06f49403fcc3}
+
+
+Commit offsets for the provided list of partitions. \begin{DoxyRemark}{Remarks}
+This is the synchronous variant that blocks until offsets are committed or the commit fails (see return value).
+
+The provided callback will be called from this function.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+ERR\_\-NO\_\-ERROR or error code. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_aad4b300803fd1c9403c165b9a6431612}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!committed@{committed}}
+\index{committed@{committed}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{committed}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::committed (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em partitions}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_aad4b300803fd1c9403c165b9a6431612}
+
+
+Retrieve committed offsets for topics+partitions. \begin{DoxyReturn}{Returns}
+RD\_\-KAFKA\_\-RESP\_\-ERR\_\-NO\_\-ERROR on success in which case the {\ttfamily offset} or {\ttfamily err} field of each {\ttfamily partitions'} element is filled in with the stored offset, or a partition specific error. Else returns an error code. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a49705c19baac7e00f6558fb7b4410a57}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!position@{position}}
+\index{position@{position}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::position (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em partitions})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a49705c19baac7e00f6558fb7b4410a57}
+
+
+Retrieve current positions (offsets) for topics+partitions. \begin{DoxyReturn}{Returns}
+RD\_\-KAFKA\_\-RESP\_\-ERR\_\-NO\_\-ERROR on success in which case the {\ttfamily offset} or {\ttfamily err} field of each {\ttfamily partitions'} element is filled in with the stored offset, or a partition specific error. Else returns an error code. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_a5c78a721aa91f3be9903f09ddf084644}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!close@{close}}
+\index{close@{close}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::close ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_a5c78a721aa91f3be9903f09ddf084644}
+
+
+Close and shut down the proper. For pausing and resuming consumption, see \begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Handle_a6be6579b7e2a0427b4595fb559e58d0f}{RdKafka::Handle::pause()} and \hyperlink{classRdKafka_1_1Handle_a322d16d6786da2b4b20505f19325fcec}{RdKafka::Handle::resume()} This call will block until the following operations are finished:
+\begin{DoxyItemize}
+\item Trigger a local rebalance to void the current \hyperlink{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}{assignment}
+\item Stop consumption for current \hyperlink{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}{assignment}
+\item Commit offsets
+\item Leave group
+\end{DoxyItemize}
+\end{DoxySeeAlso}
+The maximum blocking time is roughly limited to session.timeout.ms.
+
+\begin{DoxyRemark}{Remarks}
+Callbacks, such as \hyperlink{classRdKafka_1_1RebalanceCb}{RdKafka::RebalanceCb} and \hyperlink{classRdKafka_1_1OffsetCommitCb}{RdKafka::OffsetCommitCb}, etc, may be called.
+
+The consumer object must later be freed with {\ttfamily delete} 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1KafkaConsumer_ab08a9a8175edd12ae4e1d5bb0eb50479}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!seek@{seek}}
+\index{seek@{seek}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{seek}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::seek (const {\bf TopicPartition} \& {\em partition}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_ab08a9a8175edd12ae4e1d5bb0eb50479}
+
+
+Seek consumer for topic+partition to offset which is either an absolute or logical offset. If {\ttfamily timeout\_\-ms} is not 0 the call will wait this long for the seek to be performed. If the timeout is reached the internal state will be unknown and this function returns `ERR\_\-\_\-TIMED\_\-OUT`. If {\ttfamily timeout\_\-ms} is 0 it will initiate the seek but return immediately without any error reporting (e.g., async).
+
+This call triggers a fetch queue barrier flush.
+
+\begin{DoxyRemark}{Remarks}
+Consumtion for the given partition must have started for the seek to work. Use \hyperlink{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}{assign()} to set the starting offset.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+an ErrorCode to indicate success or failure. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1KafkaConsumer_ab693da27c7664692d2247398d483e931}{
+\index{RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}!offsets\_\-store@{offsets\_\-store}}
+\index{offsets\_\-store@{offsets\_\-store}!RdKafka::KafkaConsumer@{RdKafka::KafkaConsumer}}
+\subsubsection[{offsets\_\-store}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::KafkaConsumer::offsets\_\-store (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em offsets})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1KafkaConsumer_ab693da27c7664692d2247398d483e931}
+
+
+Store offset {\ttfamily offset} for topic partition {\ttfamily partition}. The offset will be committed (written) to the offset store according to {\ttfamily auto.commit.interval.ms} or the next manual offset-\/less commit$\ast$(). Per-\/partition success/error status propagated through \hyperlink{classRdKafka_1_1TopicPartition_adf4cd4ca1ed51f1829fddd475b96adee}{TopicPartition.err()}
+
+\begin{DoxyRemark}{Remarks}
+{\ttfamily enable.auto.offset.store} must be set to {\ttfamily false} when using this API.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+RdKafka::ERR\_\-NO\_\-ERROR on success, or RdKafka::ERR\_\-\_\-\_\-UNKNOWN\_\-PARTITION if none of the offsets could be stored, or RdKafka::ERR\_\-\_\-\_\-INVALID\_\-ARG if {\ttfamily enable.auto.offset.store} is true. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

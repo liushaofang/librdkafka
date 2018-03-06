@@ -1,0 +1,38 @@
+\hypertarget{classRdKafka_1_1PartitionerKeyPointerCb}{
+\section{RdKafka::PartitionerKeyPointerCb Class Reference}
+\label{classRdKafka_1_1PartitionerKeyPointerCb}\index{RdKafka::PartitionerKeyPointerCb@{RdKafka::PartitionerKeyPointerCb}}
+}
+
+
+Variant partitioner with key pointer.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int32\_\-t \hyperlink{classRdKafka_1_1PartitionerKeyPointerCb_a344e51bd3974cc4808bfea02e45e94e1}{partitioner\_\-cb} (const \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, const void $\ast$key, size\_\-t key\_\-len, int32\_\-t partition\_\-cnt, void $\ast$msg\_\-opaque)=0
+\begin{DoxyCompactList}\small\item\em Variant partitioner callback that gets {\ttfamily key} as pointer and length instead of as a const std::string $\ast$. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Variant partitioner with key pointer. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1PartitionerKeyPointerCb_a344e51bd3974cc4808bfea02e45e94e1}{
+\index{RdKafka::PartitionerKeyPointerCb@{RdKafka::PartitionerKeyPointerCb}!partitioner\_\-cb@{partitioner\_\-cb}}
+\index{partitioner\_\-cb@{partitioner\_\-cb}!RdKafka::PartitionerKeyPointerCb@{RdKafka::PartitionerKeyPointerCb}}
+\subsubsection[{partitioner\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual int32\_\-t RdKafka::PartitionerKeyPointerCb::partitioner\_\-cb (const {\bf Topic} $\ast$ {\em topic}, \/  const void $\ast$ {\em key}, \/  size\_\-t {\em key\_\-len}, \/  int32\_\-t {\em partition\_\-cnt}, \/  void $\ast$ {\em msg\_\-opaque})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionerKeyPointerCb_a344e51bd3974cc4808bfea02e45e94e1}
+
+
+Variant partitioner callback that gets {\ttfamily key} as pointer and length instead of as a const std::string $\ast$. \begin{DoxyRemark}{Remarks}
+{\ttfamily key} may be NULL or have {\ttfamily key\_\-len} 0.
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See also}
+See \hyperlink{classRdKafka_1_1PartitionerCb_a44c743f829a74fe7bca5a1e931a90f82}{RdKafka::PartitionerCb::partitioner\_\-cb()} for exact semantics 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

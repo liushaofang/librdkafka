@@ -1,0 +1,292 @@
+\hypertarget{classRdKafka_1_1Conf}{
+\section{RdKafka::Conf Class Reference}
+\label{classRdKafka_1_1Conf}\index{RdKafka::Conf@{RdKafka::Conf}}
+}
+
+
+Configuration interface.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001}{ConfType} \{ \par
+\hyperlink{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001a4e81d66df545d825efcfbd2c279f8d05}{CONF\_\-GLOBAL}, 
+\par
+\hyperlink{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001a7b0aad93bf57f0274f0d9632af238388}{CONF\_\-TOPIC}
+ \}
+\begin{DoxyCompactList}\small\item\em Configuration object type. \item\end{DoxyCompactList}\item 
+enum \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{ConfResult} \{ \par
+\hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6acadd966f4a2fc7af06c40c5797d6c770}{CONF\_\-UNKNOWN} =  -\/2, 
+\par
+\hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6a52341920e079d64196690c9716185cf4}{CONF\_\-INVALID} =  -\/1, 
+\par
+\hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6a24a2953f4b85e58c6915031fd7c4f52f}{CONF\_\-OK} =  0
+ \}
+\begin{DoxyCompactList}\small\item\em RdKafka::Conf::Set() result code. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_ac122170f07773c5228916a3392929f20}{set} (const std::string \&name, const std::string \&value, std::string \&errstr)=0
+\begin{DoxyCompactList}\small\item\em Set configuration property {\ttfamily name} to value {\ttfamily value}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a3f6ff1cfaac16542927c3b21daa885a4}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a3f6ff1cfaac16542927c3b21daa885a4}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1DeliveryReportCb}{DeliveryReportCb} $\ast$dr\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_a3f6ff1cfaac16542927c3b21daa885a4}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}dr\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a1230e95b69f64acfd5e0a3cacb9b593f}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a1230e95b69f64acfd5e0a3cacb9b593f}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1EventCb}{EventCb} $\ast$event\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_a1230e95b69f64acfd5e0a3cacb9b593f}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}event\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a542b0c4e968979dce8c0d3f4792c765b}{set} (const std::string \&name, const \hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$topic\_\-conf, std::string \&errstr)=0
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}default\_\-topic\_\-conf$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_ae4e52f57b1cd216ad657095bd90659b1}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_ae4e52f57b1cd216ad657095bd90659b1}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1PartitionerCb}{PartitionerCb} $\ast$partitioner\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_ae4e52f57b1cd216ad657095bd90659b1}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}partitioner\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a2243832a848942f85a537dc3eaaeaf72}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a2243832a848942f85a537dc3eaaeaf72}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1PartitionerKeyPointerCb}{PartitionerKeyPointerCb} $\ast$partitioner\_\-kp\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_a2243832a848942f85a537dc3eaaeaf72}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}partitioner\_\-key\_\-pointer\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_aa10c8c7f4e88d733509dd0a549a0628d}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_aa10c8c7f4e88d733509dd0a549a0628d}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1SocketCb}{SocketCb} $\ast$socket\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_aa10c8c7f4e88d733509dd0a549a0628d}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}socket\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_aa630f9ad61a88d261f0ddf6f91b5e2e9}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_aa630f9ad61a88d261f0ddf6f91b5e2e9}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1OpenCb}{OpenCb} $\ast$open\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_aa630f9ad61a88d261f0ddf6f91b5e2e9}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}open\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a6160e4cd43312a2fe1856f6aa671e92a}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a6160e4cd43312a2fe1856f6aa671e92a}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1RebalanceCb}{RebalanceCb} $\ast$rebalance\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_a6160e4cd43312a2fe1856f6aa671e92a}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}rebalance\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a1ad021fd3f4c374f5651435904b1a2dd}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a1ad021fd3f4c374f5651435904b1a2dd}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1OffsetCommitCb}{OffsetCommitCb} $\ast$offset\_\-commit\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_a1ad021fd3f4c374f5651435904b1a2dd}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}offset\_\-commit\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_af72e23916fb598c0b343a1235392a723}{get} (const std::string \&name, std::string \&value) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_af013485a0645e4c61158c35c85b9439c}{get} (\hyperlink{classRdKafka_1_1DeliveryReportCb}{DeliveryReportCb} $\ast$\&dr\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a29cb41ccd5c9e4270bf354a56c3d66c1}{get} (\hyperlink{classRdKafka_1_1EventCb}{EventCb} $\ast$\&event\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a76a2aeb01ec7bf6c09e70fbc804ce2cc}{get} (\hyperlink{classRdKafka_1_1PartitionerCb}{PartitionerCb} $\ast$\&partitioner\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a8335a5c13d7241d3269cc356c95807c4}{get} (\hyperlink{classRdKafka_1_1PartitionerKeyPointerCb}{PartitionerKeyPointerCb} $\ast$\&partitioner\_\-kp\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a4cdab91c91fba1ee380bf90ff716ffee}{get} (\hyperlink{classRdKafka_1_1SocketCb}{SocketCb} $\ast$\&socket\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a0c4d5be151ad4e1da74af1e5ad8071fc}{get} (\hyperlink{classRdKafka_1_1OpenCb}{OpenCb} $\ast$\&open\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a72e44c96b9ce99bec94456edfbef3007}{get} (\hyperlink{classRdKafka_1_1RebalanceCb}{RebalanceCb} $\ast$\&rebalance\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a7c7b6f5814360e4163cc1e6da53f585f}{get} (\hyperlink{classRdKafka_1_1OffsetCommitCb}{OffsetCommitCb} $\ast$\&offset\_\-commit\_\-cb) const =0
+\begin{DoxyCompactList}\small\item\em Query single configuration value. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a873c2a3b90e05f99d68916f981096869}{
+virtual std::list$<$ std::string $>$ $\ast$ \hyperlink{classRdKafka_1_1Conf_a873c2a3b90e05f99d68916f981096869}{dump} ()=0}
+\label{classRdKafka_1_1Conf_a873c2a3b90e05f99d68916f981096869}
+
+\begin{DoxyCompactList}\small\item\em Dump configuration names and values to list containing name,value tuples. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Conf_a714e2cd04cd163ee1dfa6ef3b12cecc7}{
+virtual \hyperlink{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{Conf::ConfResult} \hyperlink{classRdKafka_1_1Conf_a714e2cd04cd163ee1dfa6ef3b12cecc7}{set} (const std::string \&name, \hyperlink{classRdKafka_1_1ConsumeCb}{ConsumeCb} $\ast$consume\_\-cb, std::string \&errstr)=0}
+\label{classRdKafka_1_1Conf_a714e2cd04cd163ee1dfa6ef3b12cecc7}
+
+\begin{DoxyCompactList}\small\item\em Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}consume\_\-cb$\backslash$\char`\"{}}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1Conf_a3b462e1852939d9f6fdc6f20a23a838d}{
+static \hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$ \hyperlink{classRdKafka_1_1Conf_a3b462e1852939d9f6fdc6f20a23a838d}{create} (\hyperlink{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001}{ConfType} type)}
+\label{classRdKafka_1_1Conf_a3b462e1852939d9f6fdc6f20a23a838d}
+
+\begin{DoxyCompactList}\small\item\em Create configuration object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Configuration interface. Holds either global or topic configuration that are passed to \hyperlink{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}{RdKafka::Consumer::create()}, \hyperlink{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}{RdKafka::Producer::create()}, \hyperlink{classRdKafka_1_1KafkaConsumer_ac32a5eb3474b3315635cb1d39794d068}{RdKafka::KafkaConsumer::create()}, etc.
+
+\begin{DoxySeeAlso}{See also}
+CONFIGURATION.md for the full list of supported properties. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001}{
+\index{RdKafka::Conf@{RdKafka::Conf}!ConfType@{ConfType}}
+\index{ConfType@{ConfType}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{ConfType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RdKafka::Conf::ConfType}}}
+\label{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001}
+
+
+Configuration object type. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CONF\_\-GLOBAL@{CONF\_\-GLOBAL}!RdKafka::Conf@{RdKafka::Conf}}\index{RdKafka::Conf@{RdKafka::Conf}!CONF\_\-GLOBAL@{CONF\_\-GLOBAL}}\item[{\em 
+\hypertarget{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001a4e81d66df545d825efcfbd2c279f8d05}{
+CONF\_\-GLOBAL}
+\label{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001a4e81d66df545d825efcfbd2c279f8d05}
+}]Global configuration \index{CONF\_\-TOPIC@{CONF\_\-TOPIC}!RdKafka::Conf@{RdKafka::Conf}}\index{RdKafka::Conf@{RdKafka::Conf}!CONF\_\-TOPIC@{CONF\_\-TOPIC}}\item[{\em 
+\hypertarget{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001a7b0aad93bf57f0274f0d9632af238388}{
+CONF\_\-TOPIC}
+\label{classRdKafka_1_1Conf_a118f3a1435b5379ec999daac9d84f001a7b0aad93bf57f0274f0d9632af238388}
+}]\hyperlink{classRdKafka_1_1Topic}{Topic} specific configuration \end{description}
+\end{Desc}
+
+\hypertarget{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}{
+\index{RdKafka::Conf@{RdKafka::Conf}!ConfResult@{ConfResult}}
+\index{ConfResult@{ConfResult}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{ConfResult}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RdKafka::Conf::ConfResult}}}
+\label{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6}
+
+
+RdKafka::Conf::Set() result code. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CONF\_\-UNKNOWN@{CONF\_\-UNKNOWN}!RdKafka::Conf@{RdKafka::Conf}}\index{RdKafka::Conf@{RdKafka::Conf}!CONF\_\-UNKNOWN@{CONF\_\-UNKNOWN}}\item[{\em 
+\hypertarget{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6acadd966f4a2fc7af06c40c5797d6c770}{
+CONF\_\-UNKNOWN}
+\label{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6acadd966f4a2fc7af06c40c5797d6c770}
+}]Unknown configuration property \index{CONF\_\-INVALID@{CONF\_\-INVALID}!RdKafka::Conf@{RdKafka::Conf}}\index{RdKafka::Conf@{RdKafka::Conf}!CONF\_\-INVALID@{CONF\_\-INVALID}}\item[{\em 
+\hypertarget{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6a52341920e079d64196690c9716185cf4}{
+CONF\_\-INVALID}
+\label{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6a52341920e079d64196690c9716185cf4}
+}]Invalid configuration value \index{CONF\_\-OK@{CONF\_\-OK}!RdKafka::Conf@{RdKafka::Conf}}\index{RdKafka::Conf@{RdKafka::Conf}!CONF\_\-OK@{CONF\_\-OK}}\item[{\em 
+\hypertarget{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6a24a2953f4b85e58c6915031fd7c4f52f}{
+CONF\_\-OK}
+\label{classRdKafka_1_1Conf_a1d023a689c09f42ab18b7bd1d15a11a6a24a2953f4b85e58c6915031fd7c4f52f}
+}]Configuration property was succesfully set \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Conf_ac122170f07773c5228916a3392929f20}{
+\index{RdKafka::Conf@{RdKafka::Conf}!set@{set}}
+\index{set@{set}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::set (const std::string \& {\em name}, \/  const std::string \& {\em value}, \/  std::string \& {\em errstr})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_ac122170f07773c5228916a3392929f20}
+
+
+Set configuration property {\ttfamily name} to value {\ttfamily value}. Fallthrough: Topic-\/level configuration properties may be set using this interface in which case they are applied on the {\ttfamily default\_\-topic\_\-conf}. If no {\ttfamily default\_\-topic\_\-conf} has been set one will be created. Any sub-\/sequent set(\char`\"{}default\_\-topic\_\-conf\char`\"{}, ..) calls will replace the current default topic configuration.
+
+\begin{DoxyReturn}{Returns}
+CONF\_\-OK on success, else writes a human readable error description to {\ttfamily errstr} on error. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a542b0c4e968979dce8c0d3f4792c765b}{
+\index{RdKafka::Conf@{RdKafka::Conf}!set@{set}}
+\index{set@{set}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::set (const std::string \& {\em name}, \/  const {\bf Conf} $\ast$ {\em topic\_\-conf}, \/  std::string \& {\em errstr})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a542b0c4e968979dce8c0d3f4792c765b}
+
+
+Use with {\ttfamily name} = {\ttfamily $\backslash$\char`\"{}default\_\-topic\_\-conf$\backslash$\char`\"{}}. Sets the default topic configuration to use for for automatically subscribed topics.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}{RdKafka::KafkaConsumer::subscribe()} 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1Conf_af72e23916fb598c0b343a1235392a723}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get (const std::string \& {\em name}, \/  std::string \& {\em value}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_af72e23916fb598c0b343a1235392a723}
+
+
+Query single configuration value. Do not use this method to get callbacks registered by the configuration file. Instead use the specific \hyperlink{classRdKafka_1_1Conf_af72e23916fb598c0b343a1235392a723}{get()} methods with the specific callback parameter in the signature.
+
+Fallthrough: Topic-\/level configuration properties from the {\ttfamily default\_\-topic\_\-conf} may be retrieved using this interface.
+
+\begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily value}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_af013485a0645e4c61158c35c85b9439c}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf DeliveryReportCb} $\ast$\& {\em dr\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_af013485a0645e4c61158c35c85b9439c}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily dr\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a29cb41ccd5c9e4270bf354a56c3d66c1}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf EventCb} $\ast$\& {\em event\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a29cb41ccd5c9e4270bf354a56c3d66c1}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily event\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a76a2aeb01ec7bf6c09e70fbc804ce2cc}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf PartitionerCb} $\ast$\& {\em partitioner\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a76a2aeb01ec7bf6c09e70fbc804ce2cc}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily partitioner\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a8335a5c13d7241d3269cc356c95807c4}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf PartitionerKeyPointerCb} $\ast$\& {\em partitioner\_\-kp\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a8335a5c13d7241d3269cc356c95807c4}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily partitioner\_\-kp\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a4cdab91c91fba1ee380bf90ff716ffee}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf SocketCb} $\ast$\& {\em socket\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a4cdab91c91fba1ee380bf90ff716ffee}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily socket\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a0c4d5be151ad4e1da74af1e5ad8071fc}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf OpenCb} $\ast$\& {\em open\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a0c4d5be151ad4e1da74af1e5ad8071fc}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily open\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a72e44c96b9ce99bec94456edfbef3007}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf RebalanceCb} $\ast$\& {\em rebalance\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a72e44c96b9ce99bec94456edfbef3007}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily rebalance\_\-cb}. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Conf_a7c7b6f5814360e4163cc1e6da53f585f}{
+\index{RdKafka::Conf@{RdKafka::Conf}!get@{get}}
+\index{get@{get}!RdKafka::Conf@{RdKafka::Conf}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Conf::ConfResult} RdKafka::Conf::get ({\bf OffsetCommitCb} $\ast$\& {\em offset\_\-commit\_\-cb}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Conf_a7c7b6f5814360e4163cc1e6da53f585f}
+
+
+Query single configuration value. \begin{DoxyReturn}{Returns}
+CONF\_\-OK if the property was set previously set and returns the value in {\ttfamily offset\_\-commit\_\-cb}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

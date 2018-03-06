@@ -1,0 +1,65 @@
+\hypertarget{structrd__kafka__metadata__t}{
+\section{rd\_\-kafka\_\-metadata\_\-t Struct Reference}
+\label{structrd__kafka__metadata__t}\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}}
+}
+
+
+Metadata container.  
+
+
+{\ttfamily \#include $<$rdkafka.h$>$}\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structrd__kafka__metadata__t_a856ef1431ec96dc5e17aa201eabb471d}{broker\_\-cnt}
+\item 
+struct rd\_\-kafka\_\-metadata\_\-broker $\ast$ \hyperlink{structrd__kafka__metadata__t_ad42c894b30cf7bd1d2a737b3ebc41e72}{brokers}
+\item 
+int \hyperlink{structrd__kafka__metadata__t_acaafc5b2980d35330c213dfa7b3ae063}{topic\_\-cnt}
+\item 
+struct rd\_\-kafka\_\-metadata\_\-topic $\ast$ \hyperlink{structrd__kafka__metadata__t_aaf7472220f7c197fb7cd4a73a40ba1b8}{topics}
+\item 
+int32\_\-t \hyperlink{structrd__kafka__metadata__t_a5ad3f68559288a9d95698bb830d7b5ed}{orig\_\-broker\_\-id}
+\item 
+char $\ast$ \hyperlink{structrd__kafka__metadata__t_a6d94b09d2634a23e3ffa3c0bb5b9f5e4}{orig\_\-broker\_\-name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Metadata container. 
+
+\subsection{Field Documentation}
+\hypertarget{structrd__kafka__metadata__t_a856ef1431ec96dc5e17aa201eabb471d}{
+\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}!broker\_\-cnt@{broker\_\-cnt}}
+\index{broker\_\-cnt@{broker\_\-cnt}!rd_kafka_metadata_t@{rd\_\-kafka\_\-metadata\_\-t}}
+\subsubsection[{broker\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rd\_\-kafka\_\-metadata\_\-t::broker\_\-cnt}}}
+\label{structrd__kafka__metadata__t_a856ef1431ec96dc5e17aa201eabb471d}
+Number of brokers in {\ttfamily brokers} \hypertarget{structrd__kafka__metadata__t_ad42c894b30cf7bd1d2a737b3ebc41e72}{
+\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}!brokers@{brokers}}
+\index{brokers@{brokers}!rd_kafka_metadata_t@{rd\_\-kafka\_\-metadata\_\-t}}
+\subsubsection[{brokers}]{\setlength{\rightskip}{0pt plus 5cm}struct rd\_\-kafka\_\-metadata\_\-broker$\ast$ {\bf rd\_\-kafka\_\-metadata\_\-t::brokers}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{structrd__kafka__metadata__t_ad42c894b30cf7bd1d2a737b3ebc41e72}
+Brokers \hypertarget{structrd__kafka__metadata__t_acaafc5b2980d35330c213dfa7b3ae063}{
+\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}!topic\_\-cnt@{topic\_\-cnt}}
+\index{topic\_\-cnt@{topic\_\-cnt}!rd_kafka_metadata_t@{rd\_\-kafka\_\-metadata\_\-t}}
+\subsubsection[{topic\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rd\_\-kafka\_\-metadata\_\-t::topic\_\-cnt}}}
+\label{structrd__kafka__metadata__t_acaafc5b2980d35330c213dfa7b3ae063}
+Number of topics in {\ttfamily topics} \hypertarget{structrd__kafka__metadata__t_aaf7472220f7c197fb7cd4a73a40ba1b8}{
+\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}!topics@{topics}}
+\index{topics@{topics}!rd_kafka_metadata_t@{rd\_\-kafka\_\-metadata\_\-t}}
+\subsubsection[{topics}]{\setlength{\rightskip}{0pt plus 5cm}struct rd\_\-kafka\_\-metadata\_\-topic$\ast$ {\bf rd\_\-kafka\_\-metadata\_\-t::topics}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{structrd__kafka__metadata__t_aaf7472220f7c197fb7cd4a73a40ba1b8}
+Topics \hypertarget{structrd__kafka__metadata__t_a5ad3f68559288a9d95698bb830d7b5ed}{
+\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}!orig\_\-broker\_\-id@{orig\_\-broker\_\-id}}
+\index{orig\_\-broker\_\-id@{orig\_\-broker\_\-id}!rd_kafka_metadata_t@{rd\_\-kafka\_\-metadata\_\-t}}
+\subsubsection[{orig\_\-broker\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t {\bf rd\_\-kafka\_\-metadata\_\-t::orig\_\-broker\_\-id}}}
+\label{structrd__kafka__metadata__t_a5ad3f68559288a9d95698bb830d7b5ed}
+Broker originating this metadata \hypertarget{structrd__kafka__metadata__t_a6d94b09d2634a23e3ffa3c0bb5b9f5e4}{
+\index{rd\_\-kafka\_\-metadata\_\-t@{rd\_\-kafka\_\-metadata\_\-t}!orig\_\-broker\_\-name@{orig\_\-broker\_\-name}}
+\index{orig\_\-broker\_\-name@{orig\_\-broker\_\-name}!rd_kafka_metadata_t@{rd\_\-kafka\_\-metadata\_\-t}}
+\subsubsection[{orig\_\-broker\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf rd\_\-kafka\_\-metadata\_\-t::orig\_\-broker\_\-name}}}
+\label{structrd__kafka__metadata__t_a6d94b09d2634a23e3ffa3c0bb5b9f5e4}
+Name of originating broker 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{rdkafka_8h}{rdkafka.h}\end{DoxyCompactItemize}

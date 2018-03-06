@@ -1,0 +1,160 @@
+\hypertarget{classRdKafka_1_1Producer}{
+\section{RdKafka::Producer Class Reference}
+\label{classRdKafka_1_1Producer}\index{RdKafka::Producer@{RdKafka::Producer}}
+}
+
+
+\hyperlink{classRdKafka_1_1Producer}{Producer}.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}Inheritance diagram for RdKafka::Producer:Collaboration diagram for RdKafka::Producer:\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \par
+\hyperlink{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242a1aaa1620d84d2fa797d05a5bfcefd31e}{RK\_\-MSG\_\-FREE} =  0x1, 
+\par
+\hyperlink{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242aa88d8865f6dcffe75f73536fdf2424a5}{RK\_\-MSG\_\-COPY} =  0x2, 
+\par
+\hyperlink{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242a6f05ff968fdf3375508238e192e1c03b}{RK\_\-MSG\_\-BLOCK} =  0x4
+ \}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{RdKafka::Producer::produce()} {\ttfamily msgflags}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int msgflags, void $\ast$payload, size\_\-t len, const std::string $\ast$key, void $\ast$msg\_\-opaque)=0
+\begin{DoxyCompactList}\small\item\em Produce and send a single message to broker. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Producer_a7871c00eb302209acb9ea498eda7dee4}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1Producer_a7871c00eb302209acb9ea498eda7dee4}{produce} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int msgflags, void $\ast$payload, size\_\-t len, const void $\ast$key, size\_\-t key\_\-len, void $\ast$msg\_\-opaque)=0}
+\label{classRdKafka_1_1Producer_a7871c00eb302209acb9ea498eda7dee4}
+
+\begin{DoxyCompactList}\small\item\em Variant \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} that passes the key as a pointer and length instead of as a const std::string $\ast$. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Producer_a5d569225be5e98a016f889d54adf4e6c}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1Producer_a5d569225be5e98a016f889d54adf4e6c}{produce} (const std::string topic\_\-name, int32\_\-t partition, int msgflags, void $\ast$payload, size\_\-t len, const void $\ast$key, size\_\-t key\_\-len, int64\_\-t timestamp, void $\ast$msg\_\-opaque)=0}
+\label{classRdKafka_1_1Producer_a5d569225be5e98a016f889d54adf4e6c}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} variant that takes topic as a string (no need for creating a \hyperlink{classRdKafka_1_1Topic}{Topic} object), and also allows providing the message timestamp (microseconds since beginning of epoch, UTC). Otherwise identical to \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} above. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Producer_ac51872fe6252093fc0c271557d132d28}{
+virtual ErrorCode \hyperlink{classRdKafka_1_1Producer_ac51872fe6252093fc0c271557d132d28}{produce} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, const std::vector$<$ char $>$ $\ast$payload, const std::vector$<$ char $>$ $\ast$key, void $\ast$msg\_\-opaque)=0}
+\label{classRdKafka_1_1Producer_ac51872fe6252093fc0c271557d132d28}
+
+\begin{DoxyCompactList}\small\item\em Variant \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} that accepts vectors for key and payload. The vector data will be copied. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Producer_afa33f8d26eb49f8cc7988397bbb2db42}{flush} (int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Wait until all outstanding produce requests, et.al, are completed. This should typically be done prior to destroying a producer instance to make sure all queued and in-\/flight produce requests are completed before terminating. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Producer}{Producer} $\ast$ \hyperlink{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}{create} (\hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std::string \&errstr)
+\begin{DoxyCompactList}\small\item\em Creates a new Kafka producer handle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Producer}{Producer}. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242}{
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242}
+
+
+\hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{RdKafka::Producer::produce()} {\ttfamily msgflags}. These flags are optional and mutually exclusive. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{RK\_\-MSG\_\-FREE@{RK\_\-MSG\_\-FREE}!RdKafka::Producer@{RdKafka::Producer}}\index{RdKafka::Producer@{RdKafka::Producer}!RK\_\-MSG\_\-FREE@{RK\_\-MSG\_\-FREE}}\item[{\em 
+\hypertarget{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242a1aaa1620d84d2fa797d05a5bfcefd31e}{
+RK\_\-MSG\_\-FREE}
+\label{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242a1aaa1620d84d2fa797d05a5bfcefd31e}
+}]rdkafka will free(3) {\ttfamily payload} when it is done with it. \index{RK\_\-MSG\_\-COPY@{RK\_\-MSG\_\-COPY}!RdKafka::Producer@{RdKafka::Producer}}\index{RdKafka::Producer@{RdKafka::Producer}!RK\_\-MSG\_\-COPY@{RK\_\-MSG\_\-COPY}}\item[{\em 
+\hypertarget{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242aa88d8865f6dcffe75f73536fdf2424a5}{
+RK\_\-MSG\_\-COPY}
+\label{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242aa88d8865f6dcffe75f73536fdf2424a5}
+}]the {\ttfamily payload} data will be copied and the {\ttfamily payload} pointer will not be used by rdkafka after the call returns. \index{RK\_\-MSG\_\-BLOCK@{RK\_\-MSG\_\-BLOCK}!RdKafka::Producer@{RdKafka::Producer}}\index{RdKafka::Producer@{RdKafka::Producer}!RK\_\-MSG\_\-BLOCK@{RK\_\-MSG\_\-BLOCK}}\item[{\em 
+\hypertarget{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242a6f05ff968fdf3375508238e192e1c03b}{
+RK\_\-MSG\_\-BLOCK}
+\label{classRdKafka_1_1Producer_abe5e3437f8db2600f10a8daa429ab242a6f05ff968fdf3375508238e192e1c03b}
+}]Block produce$\ast$() on message queue full. WARNING: If a delivery report callback is used the application MUST call \hyperlink{rdkafka_8h_ad50c431e3a29d14da534db49bd0682a4}{rd\_\-kafka\_\-poll()} (or equiv.) to make sure delivered messages are drained from the internal delivery report queue. Failure to do so will result in indefinately blocking on the \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} call when the message queue is full. \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}{
+\index{RdKafka::Producer@{RdKafka::Producer}!create@{create}}
+\index{create@{create}!RdKafka::Producer@{RdKafka::Producer}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Producer}$\ast$ RdKafka::Producer::create ({\bf Conf} $\ast$ {\em conf}, \/  std::string \& {\em errstr})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}
+
+
+Creates a new Kafka producer handle. {\ttfamily conf} is an optional object that will be used instead of the default configuration. The {\ttfamily conf} object is reusable after this call.
+
+\begin{DoxyReturn}{Returns}
+the new handle on success or NULL on error in which case {\ttfamily errstr} is set to a human readable error message. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{
+\index{RdKafka::Producer@{RdKafka::Producer}!produce@{produce}}
+\index{produce@{produce}!RdKafka::Producer@{RdKafka::Producer}}
+\subsubsection[{produce}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Producer::produce ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition}, \/  int {\em msgflags}, \/  void $\ast$ {\em payload}, \/  size\_\-t {\em len}, \/  const std::string $\ast$ {\em key}, \/  void $\ast$ {\em msg\_\-opaque})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}
+
+
+Produce and send a single message to broker. This is an asynch non-\/blocking API.
+
+{\ttfamily partition} is the target partition, either:
+\begin{DoxyItemize}
+\item \hyperlink{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}{RdKafka::Topic::PARTITION\_\-UA} (unassigned) for automatic partitioning using the topic's partitioner function, or
+\item a fixed partition (0..N)
+\end{DoxyItemize}
+
+{\ttfamily msgflags} is zero or more of the following flags OR:ed together: RK\_\-MSG\_\-BLOCK -\/ block {\ttfamily produce$\ast$}() call if {\ttfamily queue.buffering.max.messages} or {\ttfamily queue.buffering.max.kbytes} are exceeded. Messages are considered in-\/queue from the point they are accepted by \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} until their corresponding delivery report callback/event returns. It is thus a requirement to call \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll()} (or equiv.) from a separate thread when RK\_\-MSG\_\-BLOCK is used. See WARNING on {\ttfamily RK\_\-MSG\_\-BLOCK} above. RK\_\-MSG\_\-FREE -\/ rdkafka will free(3) {\ttfamily payload} when it is done with it. RK\_\-MSG\_\-COPY -\/ the {\ttfamily payload} data will be copied and the {\ttfamily payload} pointer will not be used by rdkafka after the call returns.
+
+NOTE: RK\_\-MSG\_\-FREE and RK\_\-MSG\_\-COPY are mutually exclusive.
+
+If the function returns an error code and RK\_\-MSG\_\-FREE was specified, then the memory associated with the payload is still the caller's responsibility.
+
+{\ttfamily payload} is the message payload of size {\ttfamily len} bytes.
+
+{\ttfamily key} is an optional message key, if non-\/NULL it will be passed to the topic partitioner as well as be sent with the message to the broker and passed on to the consumer.
+
+{\ttfamily msg\_\-opaque} is an optional application-\/provided per-\/message opaque pointer that will provided in the delivery report callback ({\ttfamily dr\_\-cb}) for referencing this message.
+
+\begin{DoxyReturn}{Returns}
+an ErrorCode to indicate success or failure:
+\begin{DoxyItemize}
+\item ERR\_\-NO\_\-ERROR -\/ message successfully enqueued for transmission.
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item ERR\_\-\_\-QUEUE\_\-FULL -\/ maximum number of outstanding messages has been reached: {\ttfamily queue.buffering.max.message} 
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item ERR\_\-MSG\_\-SIZE\_\-TOO\_\-LARGE -\/ message is larger than configured max size: {\ttfamily messages.max.bytes} 
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item ERR\_\-\_\-UNKNOWN\_\-PARTITION -\/ requested {\ttfamily partition} is unknown in the Kafka cluster.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item ERR\_\-\_\-UNKNOWN\_\-TOPIC -\/ topic is unknown in the Kafka cluster. 
+\end{DoxyItemize}\hypertarget{classRdKafka_1_1Producer_afa33f8d26eb49f8cc7988397bbb2db42}{
+\index{RdKafka::Producer@{RdKafka::Producer}!flush@{flush}}
+\index{flush@{flush}!RdKafka::Producer@{RdKafka::Producer}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Producer::flush (int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Producer_afa33f8d26eb49f8cc7988397bbb2db42}
+
+
+Wait until all outstanding produce requests, et.al, are completed. This should typically be done prior to destroying a producer instance to make sure all queued and in-\/flight produce requests are completed before terminating. \begin{DoxyRemark}{Remarks}
+This function will call \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll()} and thus trigger callbacks.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+ERR\_\-\_\-TIMED\_\-OUT if {\ttfamily timeout\_\-ms} was reached before all outstanding requests were completed, else ERR\_\-NO\_\-ERROR 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

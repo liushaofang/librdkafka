@@ -1,0 +1,50 @@
+\hypertarget{classRdKafka_1_1PartitionerCb}{
+\section{RdKafka::PartitionerCb Class Reference}
+\label{classRdKafka_1_1PartitionerCb}\index{RdKafka::PartitionerCb@{RdKafka::PartitionerCb}}
+}
+
+
+Partitioner callback class.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int32\_\-t \hyperlink{classRdKafka_1_1PartitionerCb_a44c743f829a74fe7bca5a1e931a90f82}{partitioner\_\-cb} (const \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, const std::string $\ast$key, int32\_\-t partition\_\-cnt, void $\ast$msg\_\-opaque)=0
+\begin{DoxyCompactList}\small\item\em Partitioner callback. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Partitioner callback class. Generic partitioner callback class for implementing custom partitioners.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Conf_ac122170f07773c5228916a3392929f20}{RdKafka::Conf::set()} {\ttfamily \char`\"{}partitioner\_\-cb\char`\"{}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1PartitionerCb_a44c743f829a74fe7bca5a1e931a90f82}{
+\index{RdKafka::PartitionerCb@{RdKafka::PartitionerCb}!partitioner\_\-cb@{partitioner\_\-cb}}
+\index{partitioner\_\-cb@{partitioner\_\-cb}!RdKafka::PartitionerCb@{RdKafka::PartitionerCb}}
+\subsubsection[{partitioner\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual int32\_\-t RdKafka::PartitionerCb::partitioner\_\-cb (const {\bf Topic} $\ast$ {\em topic}, \/  const std::string $\ast$ {\em key}, \/  int32\_\-t {\em partition\_\-cnt}, \/  void $\ast$ {\em msg\_\-opaque})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionerCb_a44c743f829a74fe7bca5a1e931a90f82}
+
+
+Partitioner callback. Return the partition to use for {\ttfamily key} in {\ttfamily topic}.
+
+The {\ttfamily msg\_\-opaque} is the same {\ttfamily msg\_\-opaque} provided in the \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{RdKafka::Producer::produce()} call.
+
+\begin{DoxyRemark}{Remarks}
+{\ttfamily key} may be NULL or the empty.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+Must return a value between 0 and {\ttfamily partition\_\-cnt} (non-\/inclusive). May return RD\_\-KAFKA\_\-PARTITION\_\-UA (-\/1) if partitioning failed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+The callback may use \hyperlink{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}{RdKafka::Topic::partition\_\-available()} to check if a partition has an active leader broker. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

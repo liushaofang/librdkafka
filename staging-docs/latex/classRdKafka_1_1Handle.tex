@@ -1,0 +1,280 @@
+\hypertarget{classRdKafka_1_1Handle}{
+\section{RdKafka::Handle Class Reference}
+\label{classRdKafka_1_1Handle}\index{RdKafka::Handle@{RdKafka::Handle}}
+}
+
+
+Base handle, super class for specific clients.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}Inheritance diagram for RdKafka::Handle:\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std::string \hyperlink{classRdKafka_1_1Handle_abaa74be1b5b15784d47bc9c97edd0b9c}{name} () const =0
+\item 
+virtual const std::string \hyperlink{classRdKafka_1_1Handle_ae0395b131921c05554688202fc0160a4}{memberid} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the client's broker-\/assigned group member id. \item\end{DoxyCompactList}\item 
+virtual int \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll} (int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Polls the provided kafka handle for events. \item\end{DoxyCompactList}\item 
+virtual int \hyperlink{classRdKafka_1_1Handle_a5ea17c83faa627056fca792be4ec6616}{outq\_\-len} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the current out queue length. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_ac0cc63c574ce027a184640645151a75c}{metadata} (bool all\_\-topics, const \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$only\_\-rkt, \hyperlink{classRdKafka_1_1Metadata}{Metadata} $\ast$$\ast$metadatap, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Request \hyperlink{classRdKafka_1_1Metadata}{Metadata} from broker. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_a6be6579b7e2a0427b4595fb559e58d0f}{pause} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions)=0
+\begin{DoxyCompactList}\small\item\em Pause producing or consumption for the provided list of partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_a322d16d6786da2b4b20505f19325fcec}{resume} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions)=0
+\begin{DoxyCompactList}\small\item\em Resume producing or consumption for the provided list of partitions. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_aa74da527d73bf7b18ebeda64b3806b15}{query\_\-watermark\_\-offsets} (const std::string \&topic, int32\_\-t partition, int64\_\-t $\ast$low, int64\_\-t $\ast$high, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Query broker for low (oldest/beginning) and high (newest/end) offsets for partition. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_ab37fddad61506c8749214f1f009d17ca}{get\_\-watermark\_\-offsets} (const std::string \&topic, int32\_\-t partition, int64\_\-t $\ast$low, int64\_\-t $\ast$high)=0
+\begin{DoxyCompactList}\small\item\em Get last known low (oldest/beginning) and high (newest/end) offsets for partition. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_a23ba69e53d3e4a9b3978ca91c205a65e}{offsetsForTimes} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&offsets, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Look up the offsets for the given partitions by timestamp. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$ \hyperlink{classRdKafka_1_1Handle_a23af70ef4129f215e5991a8065fe9efa}{get\_\-partition\_\-queue} (const \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$partition)=0
+\begin{DoxyCompactList}\small\item\em Retrieve queue for a given partition. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Handle_ac5b3511e38e4f9f8ae1eadbdd4e11d3d}{set\_\-log\_\-queue} (\hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue)=0
+\begin{DoxyCompactList}\small\item\em Forward librdkafka logs (and debug) to the specified queue for serving with one of the ..\hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll()} calls. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classRdKafka_1_1Handle_a6143b8e8bbcf4bba23a687dc55ee55a3}{yield} ()=0
+\begin{DoxyCompactList}\small\item\em Cancels the current callback dispatcher (\hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{Producer::poll()}, \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{Consumer::poll()}, \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{KafkaConsumer::consume()}, etc). \item\end{DoxyCompactList}\item 
+virtual const std::string \hyperlink{classRdKafka_1_1Handle_a4c275b13ff80c40c05a2284b1e8764f1}{clusterid} (int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Returns the ClusterId as reported in broker metadata. \item\end{DoxyCompactList}\item 
+virtual struct rd\_\-kafka\_\-s $\ast$ \hyperlink{classRdKafka_1_1Handle_a9272aad75da9739bb6403999e6bca47c}{c\_\-ptr} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the underlying librdkafka C rd\_\-kafka\_\-t handle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base handle, super class for specific clients. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Handle_abaa74be1b5b15784d47bc9c97edd0b9c}{
+\index{RdKafka::Handle@{RdKafka::Handle}!name@{name}}
+\index{name@{name}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string RdKafka::Handle::name () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_abaa74be1b5b15784d47bc9c97edd0b9c}
+\begin{DoxyReturn}{Returns}
+the name of the handle 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_ae0395b131921c05554688202fc0160a4}{
+\index{RdKafka::Handle@{RdKafka::Handle}!memberid@{memberid}}
+\index{memberid@{memberid}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{memberid}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string RdKafka::Handle::memberid () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_ae0395b131921c05554688202fc0160a4}
+
+
+Returns the client's broker-\/assigned group member id. \begin{DoxyRemark}{Remarks}
+This currently requires the high-\/level \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer}
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+Last assigned member id, or empty string if not currently a group member. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{
+\index{RdKafka::Handle@{RdKafka::Handle}!poll@{poll}}
+\index{poll@{poll}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Handle::poll (int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}
+
+
+Polls the provided kafka handle for events. Events will trigger application provided callbacks to be called.
+
+The {\ttfamily timeout\_\-ms} argument specifies the maximum amount of time (in milliseconds) that the call will block waiting for events. For non-\/blocking calls, provide 0 as {\ttfamily timeout\_\-ms}. To wait indefinately for events, provide -\/1.
+
+Events:
+\begin{DoxyItemize}
+\item delivery report callbacks (if an RdKafka::DeliveryCb is configured) \mbox{[}producer\mbox{]}
+\item event callbacks (if an \hyperlink{classRdKafka_1_1EventCb}{RdKafka::EventCb} is configured) \mbox{[}producer \& consumer\mbox{]}
+\end{DoxyItemize}
+
+\begin{DoxyRemark}{Remarks}
+An application should make sure to call \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll()} at regular intervals to serve any queued callbacks waiting to be called.
+\end{DoxyRemark}
+\begin{DoxyWarning}{Warning}
+This method MUST NOT be used with the \hyperlink{classRdKafka_1_1KafkaConsumer}{RdKafka::KafkaConsumer}, use its \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{RdKafka::KafkaConsumer::consume()} instead.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+the number of events served. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_a5ea17c83faa627056fca792be4ec6616}{
+\index{RdKafka::Handle@{RdKafka::Handle}!outq\_\-len@{outq\_\-len}}
+\index{outq\_\-len@{outq\_\-len}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{outq\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Handle::outq\_\-len ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a5ea17c83faa627056fca792be4ec6616}
+
+
+Returns the current out queue length. The out queue contains messages and requests waiting to be sent to, or acknowledged by, the broker. \hypertarget{classRdKafka_1_1Handle_ac0cc63c574ce027a184640645151a75c}{
+\index{RdKafka::Handle@{RdKafka::Handle}!metadata@{metadata}}
+\index{metadata@{metadata}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{metadata}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::metadata (bool {\em all\_\-topics}, \/  const {\bf Topic} $\ast$ {\em only\_\-rkt}, \/  {\bf Metadata} $\ast$$\ast$ {\em metadatap}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_ac0cc63c574ce027a184640645151a75c}
+
+
+Request \hyperlink{classRdKafka_1_1Metadata}{Metadata} from broker. Parameters: {\ttfamily all\_\-topics} -\/ if non-\/zero: request info about all topics in cluster, if zero: only request info about locally known topics. {\ttfamily only\_\-rkt} -\/ only request info about this topic {\ttfamily metadatap} -\/ pointer to hold metadata result. The {\ttfamily $\ast$metadatap} pointer must be released with {\ttfamily delete}. {\ttfamily timeout\_\-ms} -\/ maximum response time before failing.
+
+\begin{DoxyReturn}{Returns}
+RdKafka::ERR\_\-NO\_\-ERROR on success (in which case {\ttfamily $\ast$metadatap} will be set), else RdKafka::ERR\_\-\_\-TIMED\_\-OUT on timeout or other error code on error. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_a6be6579b7e2a0427b4595fb559e58d0f}{
+\index{RdKafka::Handle@{RdKafka::Handle}!pause@{pause}}
+\index{pause@{pause}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::pause (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em partitions})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a6be6579b7e2a0427b4595fb559e58d0f}
+
+
+Pause producing or consumption for the provided list of partitions. Success or error is returned per-\/partition in the {\ttfamily partitions} list.
+
+\begin{DoxyReturn}{Returns}
+ErrorCode::NO\_\-ERROR
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Handle_a322d16d6786da2b4b20505f19325fcec}{resume()} 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1Handle_a322d16d6786da2b4b20505f19325fcec}{
+\index{RdKafka::Handle@{RdKafka::Handle}!resume@{resume}}
+\index{resume@{resume}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::resume (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em partitions})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a322d16d6786da2b4b20505f19325fcec}
+
+
+Resume producing or consumption for the provided list of partitions. Success or error is returned per-\/partition in the {\ttfamily partitions} list.
+
+\begin{DoxyReturn}{Returns}
+ErrorCode::NO\_\-ERROR
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Handle_a6be6579b7e2a0427b4595fb559e58d0f}{pause()} 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1Handle_aa74da527d73bf7b18ebeda64b3806b15}{
+\index{RdKafka::Handle@{RdKafka::Handle}!query\_\-watermark\_\-offsets@{query\_\-watermark\_\-offsets}}
+\index{query\_\-watermark\_\-offsets@{query\_\-watermark\_\-offsets}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{query\_\-watermark\_\-offsets}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::query\_\-watermark\_\-offsets (const std::string \& {\em topic}, \/  int32\_\-t {\em partition}, \/  int64\_\-t $\ast$ {\em low}, \/  int64\_\-t $\ast$ {\em high}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_aa74da527d73bf7b18ebeda64b3806b15}
+
+
+Query broker for low (oldest/beginning) and high (newest/end) offsets for partition. Offsets are returned in {\ttfamily $\ast$low} and {\ttfamily $\ast$high} respectively.
+
+\begin{DoxyReturn}{Returns}
+RdKafka::ERR\_\-NO\_\-ERROR on success or an error code on failure. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_ab37fddad61506c8749214f1f009d17ca}{
+\index{RdKafka::Handle@{RdKafka::Handle}!get\_\-watermark\_\-offsets@{get\_\-watermark\_\-offsets}}
+\index{get\_\-watermark\_\-offsets@{get\_\-watermark\_\-offsets}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{get\_\-watermark\_\-offsets}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::get\_\-watermark\_\-offsets (const std::string \& {\em topic}, \/  int32\_\-t {\em partition}, \/  int64\_\-t $\ast$ {\em low}, \/  int64\_\-t $\ast$ {\em high})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_ab37fddad61506c8749214f1f009d17ca}
+
+
+Get last known low (oldest/beginning) and high (newest/end) offsets for partition. The low offset is updated periodically (if statistics.interval.ms is set) while the high offset is updated on each fetched message set from the broker.
+
+If there is no cached offset (either low or high, or both) then OFFSET\_\-INVALID will be returned for the respective offset.
+
+Offsets are returned in {\ttfamily $\ast$low} and {\ttfamily $\ast$high} respectively.
+
+\begin{DoxyReturn}{Returns}
+RdKafka::ERR\_\-NO\_\-ERROR on success or an error code on failure.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Shall only be used with an active consumer instance. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Handle_a23ba69e53d3e4a9b3978ca91c205a65e}{
+\index{RdKafka::Handle@{RdKafka::Handle}!offsetsForTimes@{offsetsForTimes}}
+\index{offsetsForTimes@{offsetsForTimes}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{offsetsForTimes}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::offsetsForTimes (std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em offsets}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a23ba69e53d3e4a9b3978ca91c205a65e}
+
+
+Look up the offsets for the given partitions by timestamp. The returned offset for each partition is the earliest offset whose timestamp is greater than or equal to the given timestamp in the corresponding partition.
+
+The timestamps to query are represented as {\ttfamily offset} in {\ttfamily offsets} on input, and {\ttfamily offset()} will return the closest earlier offset for the timestamp on output.
+
+The function will block for at most {\ttfamily timeout\_\-ms} milliseconds.
+
+\begin{DoxyRemark}{Remarks}
+Duplicate Topic+Partitions are not supported. 
+
+Errors are also returned per \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition}, see {\ttfamily err()} 
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+an error code for general errors, else RdKafka::ERR\_\-NO\_\-ERROR in which case per-\/partition errors might be set. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_a23af70ef4129f215e5991a8065fe9efa}{
+\index{RdKafka::Handle@{RdKafka::Handle}!get\_\-partition\_\-queue@{get\_\-partition\_\-queue}}
+\index{get\_\-partition\_\-queue@{get\_\-partition\_\-queue}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{get\_\-partition\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Queue}$\ast$ RdKafka::Handle::get\_\-partition\_\-queue (const {\bf TopicPartition} $\ast$ {\em partition})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a23af70ef4129f215e5991a8065fe9efa}
+
+
+Retrieve queue for a given partition. \begin{DoxyReturn}{Returns}
+The fetch queue for the given partition if successful. Else, NULL is returned.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function only works on consumers. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Handle_ac5b3511e38e4f9f8ae1eadbdd4e11d3d}{
+\index{RdKafka::Handle@{RdKafka::Handle}!set\_\-log\_\-queue@{set\_\-log\_\-queue}}
+\index{set\_\-log\_\-queue@{set\_\-log\_\-queue}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{set\_\-log\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Handle::set\_\-log\_\-queue ({\bf Queue} $\ast$ {\em queue})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_ac5b3511e38e4f9f8ae1eadbdd4e11d3d}
+
+
+Forward librdkafka logs (and debug) to the specified queue for serving with one of the ..\hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll()} calls. This allows an application to serve log callbacks ({\ttfamily log\_\-cb}) in its thread of choice.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em queue}]\hyperlink{classRdKafka_1_1Queue}{Queue} to forward logs to. If the value is NULL the logs are forwarded to the main queue.\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+The configuration property {\ttfamily log.queue} MUST also be set to true.
+
+librdkafka maintains its own reference to the provided queue.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+ERR\_\-NO\_\-ERROR on success or an error code on error. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_a6143b8e8bbcf4bba23a687dc55ee55a3}{
+\index{RdKafka::Handle@{RdKafka::Handle}!yield@{yield}}
+\index{yield@{yield}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{yield}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RdKafka::Handle::yield ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a6143b8e8bbcf4bba23a687dc55ee55a3}
+
+
+Cancels the current callback dispatcher (\hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{Producer::poll()}, \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{Consumer::poll()}, \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{KafkaConsumer::consume()}, etc). A callback may use this to force an immediate return to the calling code (caller of e.g. ..poll()) without processing any further events.
+
+\begin{DoxyRemark}{Remarks}
+This function MUST ONLY be called from within a librdkafka callback. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Handle_a4c275b13ff80c40c05a2284b1e8764f1}{
+\index{RdKafka::Handle@{RdKafka::Handle}!clusterid@{clusterid}}
+\index{clusterid@{clusterid}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{clusterid}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string RdKafka::Handle::clusterid (int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a4c275b13ff80c40c05a2284b1e8764f1}
+
+
+Returns the ClusterId as reported in broker metadata. 
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout\_\-ms}]If there is no cached value from metadata retrieval then this specifies the maximum amount of time (in milliseconds) the call will block waiting for metadata to be retrieved. Use 0 for non-\/blocking calls.\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+Requires broker version $>$=0.10.0 and api.version.request=true.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+Last cached ClusterId, or empty string if no ClusterId could be retrieved in the allotted timespan. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_a9272aad75da9739bb6403999e6bca47c}{
+\index{RdKafka::Handle@{RdKafka::Handle}!c\_\-ptr@{c\_\-ptr}}
+\index{c\_\-ptr@{c\_\-ptr}!RdKafka::Handle@{RdKafka::Handle}}
+\subsubsection[{c\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}virtual struct rd\_\-kafka\_\-s$\ast$ RdKafka::Handle::c\_\-ptr ()\hspace{0.3cm}{\ttfamily  \mbox{[}read, pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Handle_a9272aad75da9739bb6403999e6bca47c}
+
+
+Returns the underlying librdkafka C rd\_\-kafka\_\-t handle. \begin{DoxyWarning}{Warning}
+Calling the C API on this handle is not recommended and there is no official support for it, but for cases where the C++ does not provide the proper functionality this C handle can be used to interact directly with the core librdkafka API.
+\end{DoxyWarning}
+\begin{DoxyRemark}{Remarks}
+The lifetime of the returned pointer is the same as the \hyperlink{classRdKafka_1_1Topic}{Topic} object this method is called on.
+
+Include $<$rdkafka/rdkafka.h$>$ prior to including $<$rdkafka/rdkafkacpp.h$>$
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+{\ttfamily rd\_\-kafka\_\-t$\ast$} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

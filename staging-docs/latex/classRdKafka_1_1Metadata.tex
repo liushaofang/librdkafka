@@ -1,0 +1,63 @@
+\hypertarget{classRdKafka_1_1Metadata}{
+\section{RdKafka::Metadata Class Reference}
+\label{classRdKafka_1_1Metadata}\index{RdKafka::Metadata@{RdKafka::Metadata}}
+}
+
+
+\hyperlink{classRdKafka_1_1Metadata}{Metadata} container.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1Metadata_a965c9ca825ca6334df81f397b43711af}{
+typedef std::vector$<$ const \hyperlink{classRdKafka_1_1BrokerMetadata}{BrokerMetadata} $\ast$ $>$ \hyperlink{classRdKafka_1_1Metadata_a965c9ca825ca6334df81f397b43711af}{BrokerMetadataVector}}
+\label{classRdKafka_1_1Metadata_a965c9ca825ca6334df81f397b43711af}
+
+\begin{DoxyCompactList}\small\item\em Brokers. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Metadata_a297b2b875e4e7a68ffc1c0b1fc03fa05}{
+typedef std::vector$<$ const \hyperlink{classRdKafka_1_1TopicMetadata}{TopicMetadata} $\ast$ $>$ \hyperlink{classRdKafka_1_1Metadata_a297b2b875e4e7a68ffc1c0b1fc03fa05}{TopicMetadataVector}}
+\label{classRdKafka_1_1Metadata_a297b2b875e4e7a68ffc1c0b1fc03fa05}
+
+\begin{DoxyCompactList}\small\item\em Topics. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Metadata_af5a9a87eba1dfdbf2f0123e588b043be}{
+typedef BrokerMetadataVector::const\_\-iterator \hyperlink{classRdKafka_1_1Metadata_af5a9a87eba1dfdbf2f0123e588b043be}{BrokerMetadataIterator}}
+\label{classRdKafka_1_1Metadata_af5a9a87eba1dfdbf2f0123e588b043be}
+
+\begin{DoxyCompactList}\small\item\em Brokers iterator. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Metadata_af8256b8595093a00eb4c930d9c3e559c}{
+typedef TopicMetadataVector::const\_\-iterator \hyperlink{classRdKafka_1_1Metadata_af8256b8595093a00eb4c930d9c3e559c}{TopicMetadataIterator}}
+\label{classRdKafka_1_1Metadata_af8256b8595093a00eb4c930d9c3e559c}
+
+\begin{DoxyCompactList}\small\item\em Topics iterator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1Metadata_a5a22e460d2734348a0b392b8557087c1}{
+virtual const \hyperlink{classRdKafka_1_1Metadata_a965c9ca825ca6334df81f397b43711af}{BrokerMetadataVector} $\ast$ \hyperlink{classRdKafka_1_1Metadata_a5a22e460d2734348a0b392b8557087c1}{brokers} () const =0}
+\label{classRdKafka_1_1Metadata_a5a22e460d2734348a0b392b8557087c1}
+
+\begin{DoxyCompactList}\small\item\em Broker list. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Metadata_a0c0e4915aa64843bcb585d84090911a1}{
+virtual const \hyperlink{classRdKafka_1_1Metadata_a297b2b875e4e7a68ffc1c0b1fc03fa05}{TopicMetadataVector} $\ast$ \hyperlink{classRdKafka_1_1Metadata_a0c0e4915aa64843bcb585d84090911a1}{topics} () const =0}
+\label{classRdKafka_1_1Metadata_a0c0e4915aa64843bcb585d84090911a1}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Topic}{Topic} list. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Metadata_a1c54bbc1d53845a168ba0373a2665b33}{
+virtual int32\_\-t \hyperlink{classRdKafka_1_1Metadata_a1c54bbc1d53845a168ba0373a2665b33}{orig\_\-broker\_\-id} () const =0}
+\label{classRdKafka_1_1Metadata_a1c54bbc1d53845a168ba0373a2665b33}
+
+\begin{DoxyCompactList}\small\item\em Broker (id) originating this metadata. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1Metadata_a88b43b6f9282dabef7de5af8004a5931}{
+virtual const std::string \hyperlink{classRdKafka_1_1Metadata_a88b43b6f9282dabef7de5af8004a5931}{orig\_\-broker\_\-name} () const =0}
+\label{classRdKafka_1_1Metadata_a88b43b6f9282dabef7de5af8004a5931}
+
+\begin{DoxyCompactList}\small\item\em Broker (name) originating this metadata. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Metadata}{Metadata} container. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

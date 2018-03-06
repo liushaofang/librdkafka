@@ -1,0 +1,39 @@
+\hypertarget{classRdKafka_1_1SocketCb}{
+\section{RdKafka::SocketCb Class Reference}
+\label{classRdKafka_1_1SocketCb}\index{RdKafka::SocketCb@{RdKafka::SocketCb}}
+}
+
+
+{\bfseries Portability:} \hyperlink{classRdKafka_1_1SocketCb}{SocketCb} callback class  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classRdKafka_1_1SocketCb_a60b5be4697eb7bd7e9dfae4f5cbc3401}{socket\_\-cb} (int domain, int type, int protocol)=0
+\begin{DoxyCompactList}\small\item\em Socket callback. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\bfseries Portability:} \hyperlink{classRdKafka_1_1SocketCb}{SocketCb} callback class 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1SocketCb_a60b5be4697eb7bd7e9dfae4f5cbc3401}{
+\index{RdKafka::SocketCb@{RdKafka::SocketCb}!socket\_\-cb@{socket\_\-cb}}
+\index{socket\_\-cb@{socket\_\-cb}!RdKafka::SocketCb@{RdKafka::SocketCb}}
+\subsubsection[{socket\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::SocketCb::socket\_\-cb (int {\em domain}, \/  int {\em type}, \/  int {\em protocol})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1SocketCb_a60b5be4697eb7bd7e9dfae4f5cbc3401}
+
+
+Socket callback. The socket callback is responsible for opening a socket according to the supplied {\ttfamily domain}, {\ttfamily type} and {\ttfamily protocol}. The socket shall be created with {\ttfamily CLOEXEC} set in a racefree fashion, if possible.
+
+It is typically not required to register an alternative socket implementation
+
+\begin{DoxyReturn}{Returns}
+The socket file descriptor or -\/1 on error ({\ttfamily errno} must be set) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\hypertarget{classRdKafka_1_1PartitionMetadata}{
+\section{RdKafka::PartitionMetadata Class Reference}
+\label{classRdKafka_1_1PartitionMetadata}\index{RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}}
+}
+
+
+\hyperlink{classRdKafka_1_1Metadata}{Metadata}: Partition information.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1PartitionMetadata_aecb5ee6375494d28a1bef9fac049f147}{
+typedef std::vector$<$ int32\_\-t $>$ \hyperlink{classRdKafka_1_1PartitionMetadata_aecb5ee6375494d28a1bef9fac049f147}{ReplicasVector}}
+\label{classRdKafka_1_1PartitionMetadata_aecb5ee6375494d28a1bef9fac049f147}
+
+\begin{DoxyCompactList}\small\item\em Replicas. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1PartitionMetadata_a0683f0879c9c4474eddd271bda865065}{
+typedef std::vector$<$ int32\_\-t $>$ \hyperlink{classRdKafka_1_1PartitionMetadata_a0683f0879c9c4474eddd271bda865065}{ISRSVector}}
+\label{classRdKafka_1_1PartitionMetadata_a0683f0879c9c4474eddd271bda865065}
+
+\begin{DoxyCompactList}\small\item\em ISRs (In-\/Sync-\/Replicas). \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1PartitionMetadata_a8b21e2f83d21e44139640ccbd01040db}{
+typedef ReplicasVector::const\_\-iterator \hyperlink{classRdKafka_1_1PartitionMetadata_a8b21e2f83d21e44139640ccbd01040db}{ReplicasIterator}}
+\label{classRdKafka_1_1PartitionMetadata_a8b21e2f83d21e44139640ccbd01040db}
+
+\begin{DoxyCompactList}\small\item\em Replicas iterator. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1PartitionMetadata_a6ce31da0cebc55cdb9ca61a752046d7b}{
+typedef ISRSVector::const\_\-iterator \hyperlink{classRdKafka_1_1PartitionMetadata_a6ce31da0cebc55cdb9ca61a752046d7b}{ISRSIterator}}
+\label{classRdKafka_1_1PartitionMetadata_a6ce31da0cebc55cdb9ca61a752046d7b}
+
+\begin{DoxyCompactList}\small\item\em ISRs iterator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int32\_\-t \hyperlink{classRdKafka_1_1PartitionMetadata_a70b1781ddc5ecc3998158ef970b678a0}{id} () const =0
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1PartitionMetadata_ac7328782aefb58521598ee19ed7857ca}{err} () const =0
+\item 
+virtual int32\_\-t \hyperlink{classRdKafka_1_1PartitionMetadata_aead184554d4e2c57b670b2e07b5592eb}{leader} () const =0
+\item 
+virtual const std::vector$<$ int32\_\-t $>$ $\ast$ \hyperlink{classRdKafka_1_1PartitionMetadata_ae7b6c860ea5d487d23616976cbe1a859}{replicas} () const =0
+\item 
+virtual const std::vector$<$ int32\_\-t $>$ $\ast$ \hyperlink{classRdKafka_1_1PartitionMetadata_acf801e001bec20102cd08119d6d73d88}{isrs} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Metadata}{Metadata}: Partition information. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1PartitionMetadata_a70b1781ddc5ecc3998158ef970b678a0}{
+\index{RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}!id@{id}}
+\index{id@{id}!RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}virtual int32\_\-t RdKafka::PartitionMetadata::id () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionMetadata_a70b1781ddc5ecc3998158ef970b678a0}
+\begin{DoxyReturn}{Returns}
+Partition id 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1PartitionMetadata_ac7328782aefb58521598ee19ed7857ca}{
+\index{RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}!err@{err}}
+\index{err@{err}!RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::PartitionMetadata::err () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionMetadata_ac7328782aefb58521598ee19ed7857ca}
+\begin{DoxyReturn}{Returns}
+Partition error reported by broker 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1PartitionMetadata_aead184554d4e2c57b670b2e07b5592eb}{
+\index{RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}!leader@{leader}}
+\index{leader@{leader}!RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}}
+\subsubsection[{leader}]{\setlength{\rightskip}{0pt plus 5cm}virtual int32\_\-t RdKafka::PartitionMetadata::leader () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionMetadata_aead184554d4e2c57b670b2e07b5592eb}
+\begin{DoxyReturn}{Returns}
+Leader broker (id) for partition 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1PartitionMetadata_ae7b6c860ea5d487d23616976cbe1a859}{
+\index{RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}!replicas@{replicas}}
+\index{replicas@{replicas}!RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}}
+\subsubsection[{replicas}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::vector$<$int32\_\-t$>$$\ast$ RdKafka::PartitionMetadata::replicas () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionMetadata_ae7b6c860ea5d487d23616976cbe1a859}
+\begin{DoxyReturn}{Returns}
+Replica brokers 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1PartitionMetadata_acf801e001bec20102cd08119d6d73d88}{
+\index{RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}!isrs@{isrs}}
+\index{isrs@{isrs}!RdKafka::PartitionMetadata@{RdKafka::PartitionMetadata}}
+\subsubsection[{isrs}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::vector$<$int32\_\-t$>$$\ast$ RdKafka::PartitionMetadata::isrs () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1PartitionMetadata_acf801e001bec20102cd08119d6d73d88}
+\begin{DoxyReturn}{Returns}
+In-\/Sync-\/Replica brokers 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The broker may return a cached/outdated list of ISRs. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

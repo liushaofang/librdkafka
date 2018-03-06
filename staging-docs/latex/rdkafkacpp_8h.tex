@@ -1,0 +1,332 @@
+\hypertarget{rdkafkacpp_8h}{
+\section{src-\/cpp/rdkafkacpp.h File Reference}
+\label{rdkafkacpp_8h}\index{src-\/cpp/rdkafkacpp.h@{src-\/cpp/rdkafkacpp.h}}
+}
+
+
+Apache Kafka C/C++ consumer and producer client library.  
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$list$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$stdint.h$>$}\par
+Include dependency graph for rdkafkacpp.h:\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classRdKafka_1_1DeliveryReportCb}{RdKafka::DeliveryReportCb}
+\begin{DoxyCompactList}\small\item\em Delivery Report callback class. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1PartitionerCb}{RdKafka::PartitionerCb}
+\begin{DoxyCompactList}\small\item\em Partitioner callback class. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1PartitionerKeyPointerCb}{RdKafka::PartitionerKeyPointerCb}
+\begin{DoxyCompactList}\small\item\em Variant partitioner with key pointer. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1EventCb}{RdKafka::EventCb}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Event}{Event} callback class. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Event}{RdKafka::Event}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Event}{Event} object class as passed to the \hyperlink{classRdKafka_1_1EventCb}{EventCb} callback. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1ConsumeCb}{RdKafka::ConsumeCb}
+\begin{DoxyCompactList}\small\item\em Consume callback class. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1RebalanceCb}{RdKafka::RebalanceCb}
+\begin{DoxyCompactList}\small\item\em {\bfseries KafkaConsunmer:} Rebalance callback class \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1OffsetCommitCb}{RdKafka::OffsetCommitCb}
+\begin{DoxyCompactList}\small\item\em Offset Commit callback class. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1SocketCb}{RdKafka::SocketCb}
+\begin{DoxyCompactList}\small\item\em {\bfseries Portability:} \hyperlink{classRdKafka_1_1SocketCb}{SocketCb} callback class \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1OpenCb}{RdKafka::OpenCb}
+\begin{DoxyCompactList}\small\item\em {\bfseries Portability:} \hyperlink{classRdKafka_1_1OpenCb}{OpenCb} callback class \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Conf}{RdKafka::Conf}
+\begin{DoxyCompactList}\small\item\em Configuration interface. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Handle}{RdKafka::Handle}
+\begin{DoxyCompactList}\small\item\em Base handle, super class for specific clients. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1TopicPartition}{RdKafka::TopicPartition}
+\begin{DoxyCompactList}\small\item\em Topic+Partition. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Topic}{RdKafka::Topic}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Topic}{Topic} handle. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1MessageTimestamp}{RdKafka::MessageTimestamp}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Message}{Message} timestamp object. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Message}{RdKafka::Message}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Message}{Message} object. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Queue}{RdKafka::Queue}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Queue}{Queue} interface. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1KafkaConsumer}{RdKafka::KafkaConsumer}
+\begin{DoxyCompactList}\small\item\em High-\/level \hyperlink{classRdKafka_1_1KafkaConsumer}{KafkaConsumer} (for brokers 0.9 and later). \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Consumer}{RdKafka::Consumer}
+\begin{DoxyCompactList}\small\item\em Simple \hyperlink{classRdKafka_1_1Consumer}{Consumer} (legacy). \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Producer}{RdKafka::Producer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Producer}{Producer}. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1BrokerMetadata}{RdKafka::BrokerMetadata}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Metadata}{Metadata}: Broker information. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1PartitionMetadata}{RdKafka::PartitionMetadata}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Metadata}{Metadata}: Partition information. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1TopicMetadata}{RdKafka::TopicMetadata}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Metadata}{Metadata}: \hyperlink{classRdKafka_1_1Topic}{Topic} information. \item\end{DoxyCompactList}\item 
+class \hyperlink{classRdKafka_1_1Metadata}{RdKafka::Metadata}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Metadata}{Metadata} container. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Miscellaneous APIs}
+\label{_amgrp2d330f86646ec7acacedf7876d458b15}
+ \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rdkafkacpp_8h_aa2e242fb8620a32b650a40575bc7f98e}{RD\_\-KAFKA\_\-VERSION}~0x000b04c9
+\begin{DoxyCompactList}\small\item\em librdkafka version \item\end{DoxyCompactList}\item 
+RD\_\-EXPORT int \hyperlink{namespaceRdKafka_a869d8ad1fda8d8d49c2d46fb54b8e4f0}{RdKafka::version} ()
+\begin{DoxyCompactList}\small\item\em Returns the librdkafka version as integer. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceRdKafka_a10fc3418d87dd1227edfb332d489f370}{
+RD\_\-EXPORT std::string \hyperlink{namespaceRdKafka_a10fc3418d87dd1227edfb332d489f370}{RdKafka::version\_\-str} ()}
+\label{namespaceRdKafka_a10fc3418d87dd1227edfb332d489f370}
+
+\begin{DoxyCompactList}\small\item\em Returns the librdkafka version as string. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceRdKafka_a0add7f728692ff7aecf33d993712c9d4}{
+RD\_\-EXPORT std::string \hyperlink{namespaceRdKafka_a0add7f728692ff7aecf33d993712c9d4}{RdKafka::get\_\-debug\_\-contexts} ()}
+\label{namespaceRdKafka_a0add7f728692ff7aecf33d993712c9d4}
+
+\begin{DoxyCompactList}\small\item\em Returns a CSV list of the supported debug contexts for use with Conf::Set(\char`\"{}debug\char`\"{}, ..). \item\end{DoxyCompactList}\item 
+RD\_\-EXPORT int \hyperlink{namespaceRdKafka_a2db0a6f444f9896e2c48a1939689ada1}{RdKafka::wait\_\-destroyed} (int timeout\_\-ms)
+\begin{DoxyCompactList}\small\item\em Wait for all rd\_\-kafka\_\-t objects to be destroyed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Constants, errors, types}
+\label{_amgrpbe91c33b68b07612917c92960fef9c97}
+ \begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ErrorCode} \{ \par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa82f36e056c7a25550a595aee957eaf82}{RdKafka::ERR\_\-\_\-BEGIN} =  -\/200, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfade7f062a1ff18374086d59474545c856}{RdKafka::ERR\_\-\_\-BAD\_\-MSG} =  -\/199, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad18cf17963b7570760659b001f01b2cb}{RdKafka::ERR\_\-\_\-BAD\_\-COMPRESSION} =  -\/198, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa083b09e748c690f533ea62804c032c3b}{RdKafka::ERR\_\-\_\-DESTROY} =  -\/197, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa9c268f578a984369a357b166ad91d0aa}{RdKafka::ERR\_\-\_\-FAIL} =  -\/196, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaff2dbf406ee05e03aa9936f0f359200c}{RdKafka::ERR\_\-\_\-TRANSPORT} =  -\/195, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa1d6fd5e1785a0c3f41fca64c43be2bc7}{RdKafka::ERR\_\-\_\-CRIT\_\-SYS\_\-RESOURCE} =  -\/194, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa4a4c3916fd4d99d59c5bc29a6d39ee4b}{RdKafka::ERR\_\-\_\-RESOLVE} =  -\/193, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa378d277112e18094973158bde22e4952}{RdKafka::ERR\_\-\_\-MSG\_\-TIMED\_\-OUT} =  -\/192, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaa3c02fa744fc93ee6455956f3e6d5d64}{RdKafka::ERR\_\-\_\-PARTITION\_\-EOF} =  -\/191, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa2202a78f58903f171a8443e94a884565}{RdKafka::ERR\_\-\_\-UNKNOWN\_\-PARTITION} =  -\/190, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaf9dbc1dee360ae411042982bbe104863}{RdKafka::ERR\_\-\_\-FS} =  -\/189, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaeb36afd7ca288b14544975ed7d399428}{RdKafka::ERR\_\-\_\-UNKNOWN\_\-TOPIC} =  -\/188, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad1fcfab06c9c90440c2a2fa37c260b41}{RdKafka::ERR\_\-\_\-ALL\_\-BROKERS\_\-DOWN} =  -\/187, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaebd43b1c122a3afc31d8fceed422c417}{RdKafka::ERR\_\-\_\-INVALID\_\-ARG} =  -\/186, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaa097562af4717c8dfb3cc790f7e05e22}{RdKafka::ERR\_\-\_\-TIMED\_\-OUT} =  -\/185, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaa78dedfb44d02a8fd0814fac794ea5f6}{RdKafka::ERR\_\-\_\-QUEUE\_\-FULL} =  -\/184, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfacd05004658dee269b6b5def731fe8e13}{RdKafka::ERR\_\-\_\-ISR\_\-INSUFF} =  -\/183, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa29db43f3eac680949f5c0d2ce1a20ab5}{RdKafka::ERR\_\-\_\-NODE\_\-UPDATE} =  -\/182, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa4e80a99e7039035dd7df5f24db8586ed}{RdKafka::ERR\_\-\_\-SSL} =  -\/181, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa755dbf21cd00a2d41c55c1fcbf0c4bfd}{RdKafka::ERR\_\-\_\-WAIT\_\-COORD} =  -\/180, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa2d8cc267767ecb9bece7222815d2ca0f}{RdKafka::ERR\_\-\_\-UNKNOWN\_\-GROUP} =  -\/179, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad411ad0d523f8e69d14373c21c854c81}{RdKafka::ERR\_\-\_\-IN\_\-PROGRESS} =  -\/178, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa9f8e07cadb9e7338d6c611f0ac16d3d5}{RdKafka::ERR\_\-\_\-PREV\_\-IN\_\-PROGRESS} =  -\/177, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa9d254be3392fb5b5bfe6f39483886518}{RdKafka::ERR\_\-\_\-EXISTING\_\-SUBSCRIPTION} =  -\/176, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa1109c7a62c4147d87284c3691963e535}{RdKafka::ERR\_\-\_\-ASSIGN\_\-PARTITIONS} =  -\/175, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa19de99a7cc6ebf642862d8f2b31bb9d4}{RdKafka::ERR\_\-\_\-REVOKE\_\-PARTITIONS} =  -\/174, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa54f19f8f5924368796da3e207bc607a4}{RdKafka::ERR\_\-\_\-CONFLICT} =  -\/173, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa61cf8ff3a059643eb0c4a7195a96efb3}{RdKafka::ERR\_\-\_\-STATE} =  -\/172, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfadd0862014ae7fecfbd59cdeaa3563bdc}{RdKafka::ERR\_\-\_\-UNKNOWN\_\-PROTOCOL} =  -\/171, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa36fb5e4a947c8037505dbd8edd72c7f9}{RdKafka::ERR\_\-\_\-NOT\_\-IMPLEMENTED} =  -\/170, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa482adc081de3f634a52a9a31e62b968d}{RdKafka::ERR\_\-\_\-AUTHENTICATION} =  -\/169, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa9398708d0f805361ba5c6f90d3f46ff9}{RdKafka::ERR\_\-\_\-NO\_\-OFFSET} =  -\/168, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa6b3eab8dde90a4ac0a1eefed17b325c7}{RdKafka::ERR\_\-\_\-OUTDATED} =  -\/167, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa3d6731176b9af542bc3f7bd87e454e75}{RdKafka::ERR\_\-\_\-TIMED\_\-OUT\_\-QUEUE} =  -\/166, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfab24143ae08bd2abe3fe3b26bc19b05e1}{RdKafka::ERR\_\-\_\-UNSUPPORTED\_\-FEATURE} =  -\/165, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa223549251ca2ac8c153e6ed7c4806fe9}{RdKafka::ERR\_\-\_\-WAIT\_\-CACHE} =  -\/164, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfafe257d3b6ee7e60e778df5d0e9f29340}{RdKafka::ERR\_\-\_\-INTR} =  -\/163, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa62d8256a91d567693e7dd1cee85e9f79}{RdKafka::ERR\_\-\_\-KEY\_\-SERIALIZATION} =  -\/162, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad2452cc0f6bbb11083b1e4b41b822e63}{RdKafka::ERR\_\-\_\-VALUE\_\-SERIALIZATION} =  -\/161, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaf9a593c287a12d748e8714ea98c2ab44}{RdKafka::ERR\_\-\_\-KEY\_\-DESERIALIZATION} =  -\/160, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaaf703ba4b6e71ebfaff1fd6250519df8}{RdKafka::ERR\_\-\_\-VALUE\_\-DESERIALIZATION} =  -\/159, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae3abd4791b6afd74bc1d6ec2ae66b811}{RdKafka::ERR\_\-\_\-PARTIAL} =  -\/158, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa388843ba14f1b5fc8d92f50c56a76d9a}{RdKafka::ERR\_\-\_\-READ\_\-ONLY} =  -\/157, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae236d18124c31b1854cf17d73489159f}{RdKafka::ERR\_\-\_\-NOENT} =  -\/156, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa0c796fb6362d229aa1d4c74388e070d6}{RdKafka::ERR\_\-\_\-UNDERFLOW} =  -\/155, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad3366311d79e6a1fd5f70ac7f948e43e}{RdKafka::ERR\_\-\_\-END} =  -\/100, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa1897d06cbf4ea4724e37055ae4287437}{RdKafka::ERR\_\-UNKNOWN} =  -\/1, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa2a52f5b7ed4e72e64f91ce80cd655582}{RdKafka::ERR\_\-NO\_\-ERROR} =  0, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaf3024247a61e83f10b022d1d1c15fd77}{RdKafka::ERR\_\-OFFSET\_\-OUT\_\-OF\_\-RANGE} =  1, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaa818358511e37d497cab7303506c11d7}{RdKafka::ERR\_\-INVALID\_\-MSG} =  2, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae61893319707b1b8fe57c93706f87a0d}{RdKafka::ERR\_\-UNKNOWN\_\-TOPIC\_\-OR\_\-PART} =  3, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa64dbe3990d34d5b4db109e1f184bdd88}{RdKafka::ERR\_\-INVALID\_\-MSG\_\-SIZE} =  4, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa43662328a36de5dc35bf01e2cb28939e}{RdKafka::ERR\_\-LEADER\_\-NOT\_\-AVAILABLE} =  5, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa049273321f952f67b38a516081e2cb9e}{RdKafka::ERR\_\-NOT\_\-LEADER\_\-FOR\_\-PARTITION} =  6, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa6dfc7b3136393636eeff6d9d3f61f781}{RdKafka::ERR\_\-REQUEST\_\-TIMED\_\-OUT} =  7, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad9e62be0685711eb7011f8a0c5d8eaa7}{RdKafka::ERR\_\-BROKER\_\-NOT\_\-AVAILABLE} =  8, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad663597820ef271852fceb68a7ca5290}{RdKafka::ERR\_\-REPLICA\_\-NOT\_\-AVAILABLE} =  9, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa7aa29a9c331326d284ab8d59d27273e4}{RdKafka::ERR\_\-MSG\_\-SIZE\_\-TOO\_\-LARGE} =  10, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa71861a8377847bfd02ff7054b362bad2}{RdKafka::ERR\_\-STALE\_\-CTRL\_\-EPOCH} =  11, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfab6c121fdf1ee5685c28f9bbb933baeb8}{RdKafka::ERR\_\-OFFSET\_\-METADATA\_\-TOO\_\-LARGE} =  12, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa7b28ac55385f1108b4553060ecfd139f}{RdKafka::ERR\_\-NETWORK\_\-EXCEPTION} =  13, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaad7d0c66b5e88f6d0db16fd7ab6816f1}{RdKafka::ERR\_\-GROUP\_\-LOAD\_\-IN\_\-PROGRESS} =  14, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa443e1d8a6b9ae0261e244253aff69279}{RdKafka::ERR\_\-GROUP\_\-COORDINATOR\_\-NOT\_\-AVAILABLE} =  15, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa393332dc950d7a8d305bf617140f436b}{RdKafka::ERR\_\-NOT\_\-COORDINATOR\_\-FOR\_\-GROUP} =  16, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa48ef7fd3705a1241517aa8d59eec1b4e}{RdKafka::ERR\_\-TOPIC\_\-EXCEPTION} =  17, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae2f9137bdc729aadf3b390e475a64921}{RdKafka::ERR\_\-RECORD\_\-LIST\_\-TOO\_\-LARGE} =  18, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfab7dddc91e0d7c423d9de868dc6f26143}{RdKafka::ERR\_\-NOT\_\-ENOUGH\_\-REPLICAS} =  19, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaa55286829235f40bcaba190fd2925b7b}{RdKafka::ERR\_\-NOT\_\-ENOUGH\_\-REPLICAS\_\-AFTER\_\-APPEND} =  20, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa4cbe6f8a50d377f578e00612db147ba3}{RdKafka::ERR\_\-INVALID\_\-REQUIRED\_\-ACKS} =  21, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa44ed4fea348fbfb09c6d2647e695311f}{RdKafka::ERR\_\-ILLEGAL\_\-GENERATION} =  22, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa2cf04c2594f521735f70a8fd05d82bc5}{RdKafka::ERR\_\-INCONSISTENT\_\-GROUP\_\-PROTOCOL} =  23, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa3ad7e2aba16a58bf602ebfce1936db99}{RdKafka::ERR\_\-INVALID\_\-GROUP\_\-ID} =  24, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa38fa35da79b11ed26a390dc2e4e87b0b}{RdKafka::ERR\_\-UNKNOWN\_\-MEMBER\_\-ID} =  25, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa0be7498da7d574473783165e3c496ea8}{RdKafka::ERR\_\-INVALID\_\-SESSION\_\-TIMEOUT} =  26, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae2877d5e6edb9e65c40b3e1f5707de91}{RdKafka::ERR\_\-REBALANCE\_\-IN\_\-PROGRESS} =  27, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa7848b582f151c25efe02bb8bc4906f64}{RdKafka::ERR\_\-INVALID\_\-COMMIT\_\-OFFSET\_\-SIZE} =  28, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa798a7619edd5412e72a2b6c11754b897}{RdKafka::ERR\_\-TOPIC\_\-AUTHORIZATION\_\-FAILED} =  29, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa8e5d5c79069b1fbc50c75e8a1fa94ab3}{RdKafka::ERR\_\-GROUP\_\-AUTHORIZATION\_\-FAILED} =  30, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa16758c840d00dc4cdeef70c7e6370eb6}{RdKafka::ERR\_\-CLUSTER\_\-AUTHORIZATION\_\-FAILED} =  31, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaf0afb2d0b30caf9a823e0ae75145948a}{RdKafka::ERR\_\-INVALID\_\-TIMESTAMP} =  32, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaba04dcaf0ae8f728fb83aa70fd1240c2}{RdKafka::ERR\_\-UNSUPPORTED\_\-SASL\_\-MECHANISM} =  33, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa995b5a1a8e70b992a69cbdf43e2c3dd3}{RdKafka::ERR\_\-ILLEGAL\_\-SASL\_\-STATE} =  34, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa72b6171f94bee98bfd977681b2f5546d}{RdKafka::ERR\_\-UNSUPPORTED\_\-VERSION} =  35, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa455c0f6f9c889b7e0c343b34a8c3b9b2}{RdKafka::ERR\_\-TOPIC\_\-ALREADY\_\-EXISTS} =  36, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa2f80b8c6ea294b55bef5af1ea4d6bd87}{RdKafka::ERR\_\-INVALID\_\-PARTITIONS} =  37, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa381d36f340fcaa95087b91359f83d499}{RdKafka::ERR\_\-INVALID\_\-REPLICATION\_\-FACTOR} =  38, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad7de1b5969bf3ede7a8b733cda453781}{RdKafka::ERR\_\-INVALID\_\-REPLICA\_\-ASSIGNMENT} =  39, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad4ce1bb52c50c1c5fcf1757b3e2d7148}{RdKafka::ERR\_\-INVALID\_\-CONFIG} =  40, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfafd2b45cbde1c9a302317392aeda56410}{RdKafka::ERR\_\-NOT\_\-CONTROLLER} =  41, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa0a42561c92d4bb41fca79a502f3a6131}{RdKafka::ERR\_\-INVALID\_\-REQUEST} =  42, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaec9606beeaf74f405b08b2c279f52a2a}{RdKafka::ERR\_\-UNSUPPORTED\_\-FOR\_\-MESSAGE\_\-FORMAT} =  43, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfaf802eeecc03cf2a829ac1ca238f0fcf1}{RdKafka::ERR\_\-POLICY\_\-VIOLATION} =  44, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa3abab13461811fbd251c8f74106fcd4a}{RdKafka::ERR\_\-OUT\_\-OF\_\-ORDER\_\-SEQUENCE\_\-NUMBER} =  45, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfab674f26d8fa935c3db32cc440370dc3d}{RdKafka::ERR\_\-DUPLICATE\_\-SEQUENCE\_\-NUMBER} =  46, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfab5b02f5d509ec898a3208f4482e6e3d4}{RdKafka::ERR\_\-INVALID\_\-PRODUCER\_\-EPOCH} =  47, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa1f7f11a51e20ce263e2e7616eb961016}{RdKafka::ERR\_\-INVALID\_\-TXN\_\-STATE} =  48, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae309bfc1767e6c077bbd0b50a12328bf}{RdKafka::ERR\_\-INVALID\_\-PRODUCER\_\-ID\_\-MAPPING} =  49, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa6e329970073c14bddaa11d232bedfa05}{RdKafka::ERR\_\-INVALID\_\-TRANSACTION\_\-TIMEOUT} =  50, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfa7050813e910e757af2a480b344b31be2}{RdKafka::ERR\_\-CONCURRENT\_\-TRANSACTIONS} =  51, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfae5aff3ffd952ee97611daac0dfcc9a79}{RdKafka::ERR\_\-TRANSACTION\_\-COORDINATOR\_\-FENCED} =  52, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfabd337f688a6347f8e2ed5abe826eac2b}{RdKafka::ERR\_\-TRANSACTIONAL\_\-ID\_\-AUTHORIZATION\_\-FAILED} =  53, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfac8ecfbf733123cdbc7221d4fc543b06a}{RdKafka::ERR\_\-SECURITY\_\-DISABLED} =  54, 
+\par
+\hyperlink{namespaceRdKafka_a4c6b7af48c215724c323c60ea4080dbfad283d0637f067b801a82de08ca03a0c7}{RdKafka::ERR\_\-OPERATION\_\-NOT\_\-ATTEMPTED} =  55
+ \}
+\begin{DoxyCompactList}\small\item\em Error codes. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceRdKafka_a3f609f8a414567c4a59b938239ac0873}{
+RD\_\-EXPORT std::string \hyperlink{namespaceRdKafka_a3f609f8a414567c4a59b938239ac0873}{RdKafka::err2str} (RdKafka::ErrorCode err)}
+\label{namespaceRdKafka_a3f609f8a414567c4a59b938239ac0873}
+
+\begin{DoxyCompactList}\small\item\em Returns a human readable representation of a kafka error. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Apache Kafka C/C++ consumer and producer client library. \hyperlink{rdkafkacpp_8h}{rdkafkacpp.h} contains the public C++ API for librdkafka. The API is documented in this file as comments prefixing the class, function, type, enum, define, etc. For more information, see the C interface in \hyperlink{rdkafka_8h}{rdkafka.h} and read the manual in INTRODUCTION.md. The C++ interface is STD C++ '03 compliant and adheres to the Google C++ Style Guide.
+
+\begin{DoxySeeAlso}{See also}
+For the C interface see \hyperlink{rdkafka_8h}{rdkafka.h}
+\end{DoxySeeAlso}
+
+
+\subsection{Define Documentation}
+\hypertarget{rdkafkacpp_8h_aa2e242fb8620a32b650a40575bc7f98e}{
+\index{rdkafkacpp.h@{rdkafkacpp.h}!RD\_\-KAFKA\_\-VERSION@{RD\_\-KAFKA\_\-VERSION}}
+\index{RD\_\-KAFKA\_\-VERSION@{RD\_\-KAFKA\_\-VERSION}!rdkafkacpp.h@{rdkafkacpp.h}}
+\subsubsection[{RD\_\-KAFKA\_\-VERSION}]{\setlength{\rightskip}{0pt plus 5cm}\#define RD\_\-KAFKA\_\-VERSION~0x000b04c9}}
+\label{rdkafkacpp_8h_aa2e242fb8620a32b650a40575bc7f98e}
+
+
+librdkafka version Interpreted as hex {\ttfamily MM.mm.rr.xx}:
+\begin{DoxyItemize}
+\item MM = Major
+\item mm = minor
+\item rr = revision
+\item xx = pre-\/release id (0xff is the final release)
+\end{DoxyItemize}
+
+E.g.: {\ttfamily 0x000801ff} = 0.8.1
+
+\begin{DoxyRemark}{Remarks}
+This value should only be used during compile time, for runtime checks of version use RdKafka::version() 
+\end{DoxyRemark}

@@ -1,0 +1,190 @@
+\hypertarget{classRdKafka_1_1Message}{
+\section{RdKafka::Message Class Reference}
+\label{classRdKafka_1_1Message}\index{RdKafka::Message@{RdKafka::Message}}
+}
+
+
+\hyperlink{classRdKafka_1_1Message}{Message} object.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std::string \hyperlink{classRdKafka_1_1Message_a3f3471916c7375945d837b05af05aa94}{errstr} () const =0
+\begin{DoxyCompactList}\small\item\em Accessor functions$\ast$. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{err} () const =0
+\item 
+virtual \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$ \hyperlink{classRdKafka_1_1Message_a6eb88c584037280b796500d541251938}{topic} () const =0
+\item 
+virtual std::string \hyperlink{classRdKafka_1_1Message_a02e16f76e8d248fe47e0f09ff2d13492}{topic\_\-name} () const =0
+\item 
+virtual int32\_\-t \hyperlink{classRdKafka_1_1Message_aebc6b57026d44ade6c75d5e421fa4384}{partition} () const =0
+\item 
+virtual void $\ast$ \hyperlink{classRdKafka_1_1Message_ae7426658cd22855e80d3169b85ca2d27}{payload} () const =0
+\item 
+virtual size\_\-t \hyperlink{classRdKafka_1_1Message_a68d94e027f0df784632880d24a43b3f9}{len} () const =0
+\item 
+virtual const std::string $\ast$ \hyperlink{classRdKafka_1_1Message_a2430de7003342977001c9bab7604f152}{key} () const =0
+\item 
+virtual const void $\ast$ \hyperlink{classRdKafka_1_1Message_a565d08ab88de128aca7efb57c3ed6c15}{key\_\-pointer} () const =0
+\item 
+virtual size\_\-t \hyperlink{classRdKafka_1_1Message_acde2505155defd52a279950113447dbb}{key\_\-len} () const =0
+\item 
+virtual int64\_\-t \hyperlink{classRdKafka_1_1Message_a5a8efc75fd27f8839997fc506776db67}{offset} () const =0
+\item 
+virtual \hyperlink{classRdKafka_1_1MessageTimestamp}{MessageTimestamp} \hyperlink{classRdKafka_1_1Message_a710964fe3cfdf9555d176d1a6047a1ec}{timestamp} () const =0
+\item 
+virtual void $\ast$ \hyperlink{classRdKafka_1_1Message_ae13ce414d2c6ad68ddefc4ccca640f17}{msg\_\-opaque} () const =0
+\item 
+virtual int64\_\-t \hyperlink{classRdKafka_1_1Message_a8cce832cbab290d193b028ca3f689b07}{latency} () const =0
+\item 
+virtual struct rd\_\-kafka\_\-message\_\-s $\ast$ \hyperlink{classRdKafka_1_1Message_a6add1e2620c7ac4283f150e48cb6e53e}{c\_\-ptr} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the underlying librdkafka C \hyperlink{structrd__kafka__message__t}{rd\_\-kafka\_\-message\_\-t} handle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Message}{Message} object. This object represents either a single consumed or produced message, or an event ({\ttfamily \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{err()}} is set).
+
+An application must check \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} to see if the object is a proper message (error is RdKafka::ERR\_\-NO\_\-ERROR) or a an error event. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Message_a3f3471916c7375945d837b05af05aa94}{
+\index{RdKafka::Message@{RdKafka::Message}!errstr@{errstr}}
+\index{errstr@{errstr}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{errstr}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string RdKafka::Message::errstr () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a3f3471916c7375945d837b05af05aa94}
+
+
+Accessor functions$\ast$. \begin{DoxyRemark}{Remarks}
+Not all fields are present in all types of callbacks. 
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+The error string if object represent an error event, else an empty string. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{
+\index{RdKafka::Message@{RdKafka::Message}!err@{err}}
+\index{err@{err}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Message::err () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}
+\begin{DoxyReturn}{Returns}
+The error code if object represents an error event, else 0. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a6eb88c584037280b796500d541251938}{
+\index{RdKafka::Message@{RdKafka::Message}!topic@{topic}}
+\index{topic@{topic}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{topic}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Topic}$\ast$ RdKafka::Message::topic () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a6eb88c584037280b796500d541251938}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classRdKafka_1_1Topic}{RdKafka::Topic} object for a message (if applicable), or NULL if a corresponding \hyperlink{classRdKafka_1_1Topic}{RdKafka::Topic} object has not been explicitly created with \hyperlink{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}{RdKafka::Topic::create()}. In this case use \hyperlink{classRdKafka_1_1Message_a02e16f76e8d248fe47e0f09ff2d13492}{topic\_\-name()} instead. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a02e16f76e8d248fe47e0f09ff2d13492}{
+\index{RdKafka::Message@{RdKafka::Message}!topic\_\-name@{topic\_\-name}}
+\index{topic\_\-name@{topic\_\-name}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{topic\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string RdKafka::Message::topic\_\-name () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a02e16f76e8d248fe47e0f09ff2d13492}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Topic}{Topic} name (if applicable, else empty string) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_aebc6b57026d44ade6c75d5e421fa4384}{
+\index{RdKafka::Message@{RdKafka::Message}!partition@{partition}}
+\index{partition@{partition}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{partition}]{\setlength{\rightskip}{0pt plus 5cm}virtual int32\_\-t RdKafka::Message::partition () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_aebc6b57026d44ade6c75d5e421fa4384}
+\begin{DoxyReturn}{Returns}
+Partition (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_ae7426658cd22855e80d3169b85ca2d27}{
+\index{RdKafka::Message@{RdKafka::Message}!payload@{payload}}
+\index{payload@{payload}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ RdKafka::Message::payload () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_ae7426658cd22855e80d3169b85ca2d27}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} payload (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a68d94e027f0df784632880d24a43b3f9}{
+\index{RdKafka::Message@{RdKafka::Message}!len@{len}}
+\index{len@{len}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t RdKafka::Message::len () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a68d94e027f0df784632880d24a43b3f9}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} payload length (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a2430de7003342977001c9bab7604f152}{
+\index{RdKafka::Message@{RdKafka::Message}!key@{key}}
+\index{key@{key}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string$\ast$ RdKafka::Message::key () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a2430de7003342977001c9bab7604f152}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} key as string (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a565d08ab88de128aca7efb57c3ed6c15}{
+\index{RdKafka::Message@{RdKafka::Message}!key\_\-pointer@{key\_\-pointer}}
+\index{key\_\-pointer@{key\_\-pointer}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{key\_\-pointer}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void$\ast$ RdKafka::Message::key\_\-pointer () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a565d08ab88de128aca7efb57c3ed6c15}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} key as void pointer (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_acde2505155defd52a279950113447dbb}{
+\index{RdKafka::Message@{RdKafka::Message}!key\_\-len@{key\_\-len}}
+\index{key\_\-len@{key\_\-len}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{key\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t RdKafka::Message::key\_\-len () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_acde2505155defd52a279950113447dbb}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} key's binary length (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a5a8efc75fd27f8839997fc506776db67}{
+\index{RdKafka::Message@{RdKafka::Message}!offset@{offset}}
+\index{offset@{offset}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}virtual int64\_\-t RdKafka::Message::offset () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a5a8efc75fd27f8839997fc506776db67}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} or error offset (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a710964fe3cfdf9555d176d1a6047a1ec}{
+\index{RdKafka::Message@{RdKafka::Message}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf MessageTimestamp} RdKafka::Message::timestamp () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a710964fe3cfdf9555d176d1a6047a1ec}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Message}{Message} timestamp (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_ae13ce414d2c6ad68ddefc4ccca640f17}{
+\index{RdKafka::Message@{RdKafka::Message}!msg\_\-opaque@{msg\_\-opaque}}
+\index{msg\_\-opaque@{msg\_\-opaque}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{msg\_\-opaque}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ RdKafka::Message::msg\_\-opaque () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_ae13ce414d2c6ad68ddefc4ccca640f17}
+\begin{DoxyReturn}{Returns}
+The {\ttfamily msg\_\-opaque} as provided to \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{RdKafka::Producer::produce()} 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a8cce832cbab290d193b028ca3f689b07}{
+\index{RdKafka::Message@{RdKafka::Message}!latency@{latency}}
+\index{latency@{latency}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{latency}]{\setlength{\rightskip}{0pt plus 5cm}virtual int64\_\-t RdKafka::Message::latency () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a8cce832cbab290d193b028ca3f689b07}
+\begin{DoxyReturn}{Returns}
+the latency in microseconds for a produced message measured from the produce() call, or -\/1 if latency is not available. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Message_a6add1e2620c7ac4283f150e48cb6e53e}{
+\index{RdKafka::Message@{RdKafka::Message}!c\_\-ptr@{c\_\-ptr}}
+\index{c\_\-ptr@{c\_\-ptr}!RdKafka::Message@{RdKafka::Message}}
+\subsubsection[{c\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}virtual struct rd\_\-kafka\_\-message\_\-s$\ast$ RdKafka::Message::c\_\-ptr ()\hspace{0.3cm}{\ttfamily  \mbox{[}read, pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Message_a6add1e2620c7ac4283f150e48cb6e53e}
+
+
+Returns the underlying librdkafka C \hyperlink{structrd__kafka__message__t}{rd\_\-kafka\_\-message\_\-t} handle. \begin{DoxyWarning}{Warning}
+Calling the C API on this handle is not recommended and there is no official support for it, but for cases where the C++ API does not provide the underlying functionality this C handle can be used to interact directly with the core librdkafka API.
+\end{DoxyWarning}
+\begin{DoxyRemark}{Remarks}
+The lifetime of the returned pointer is the same as the \hyperlink{classRdKafka_1_1Message}{Message} object this method is called on.
+
+Include $<$rdkafka/rdkafka.h$>$ prior to including $<$rdkafka/rdkafkacpp.h$>$
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+{\ttfamily rd\_\-kafka\_\-message\_\-t$\ast$} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

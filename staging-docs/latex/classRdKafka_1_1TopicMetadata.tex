@@ -1,0 +1,66 @@
+\hypertarget{classRdKafka_1_1TopicMetadata}{
+\section{RdKafka::TopicMetadata Class Reference}
+\label{classRdKafka_1_1TopicMetadata}\index{RdKafka::TopicMetadata@{RdKafka::TopicMetadata}}
+}
+
+
+\hyperlink{classRdKafka_1_1Metadata}{Metadata}: \hyperlink{classRdKafka_1_1Topic}{Topic} information.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1TopicMetadata_a79cef242d0f8c8630e7afac0ba3dfb55}{
+typedef std::vector$<$ const \hyperlink{classRdKafka_1_1PartitionMetadata}{PartitionMetadata} $\ast$ $>$ \hyperlink{classRdKafka_1_1TopicMetadata_a79cef242d0f8c8630e7afac0ba3dfb55}{PartitionMetadataVector}}
+\label{classRdKafka_1_1TopicMetadata_a79cef242d0f8c8630e7afac0ba3dfb55}
+
+\begin{DoxyCompactList}\small\item\em Partitions. \item\end{DoxyCompactList}\item 
+\hypertarget{classRdKafka_1_1TopicMetadata_aeef93f964b3c3dcde1067752be9f6508}{
+typedef PartitionMetadataVector::const\_\-iterator \hyperlink{classRdKafka_1_1TopicMetadata_aeef93f964b3c3dcde1067752be9f6508}{PartitionMetadataIterator}}
+\label{classRdKafka_1_1TopicMetadata_aeef93f964b3c3dcde1067752be9f6508}
+
+\begin{DoxyCompactList}\small\item\em Partitions iterator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std::string \hyperlink{classRdKafka_1_1TopicMetadata_ac344fa7442c91d89a7d80a39816d9d9f}{topic} () const =0
+\item 
+virtual const \hyperlink{classRdKafka_1_1TopicMetadata_a79cef242d0f8c8630e7afac0ba3dfb55}{PartitionMetadataVector} $\ast$ \hyperlink{classRdKafka_1_1TopicMetadata_a12ab2dc3e052e307a749c90d467c211b}{partitions} () const =0
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1TopicMetadata_a01748dcf03bb40267856600a3221c4e0}{err} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Metadata}{Metadata}: \hyperlink{classRdKafka_1_1Topic}{Topic} information. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1TopicMetadata_ac344fa7442c91d89a7d80a39816d9d9f}{
+\index{RdKafka::TopicMetadata@{RdKafka::TopicMetadata}!topic@{topic}}
+\index{topic@{topic}!RdKafka::TopicMetadata@{RdKafka::TopicMetadata}}
+\subsubsection[{topic}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string RdKafka::TopicMetadata::topic () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicMetadata_ac344fa7442c91d89a7d80a39816d9d9f}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Topic}{Topic} name 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1TopicMetadata_a12ab2dc3e052e307a749c90d467c211b}{
+\index{RdKafka::TopicMetadata@{RdKafka::TopicMetadata}!partitions@{partitions}}
+\index{partitions@{partitions}!RdKafka::TopicMetadata@{RdKafka::TopicMetadata}}
+\subsubsection[{partitions}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf PartitionMetadataVector}$\ast$ RdKafka::TopicMetadata::partitions () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicMetadata_a12ab2dc3e052e307a749c90d467c211b}
+\begin{DoxyReturn}{Returns}
+Partition list 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1TopicMetadata_a01748dcf03bb40267856600a3221c4e0}{
+\index{RdKafka::TopicMetadata@{RdKafka::TopicMetadata}!err@{err}}
+\index{err@{err}!RdKafka::TopicMetadata@{RdKafka::TopicMetadata}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::TopicMetadata::err () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicMetadata_a01748dcf03bb40267856600a3221c4e0}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Topic}{Topic} error reported by broker 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

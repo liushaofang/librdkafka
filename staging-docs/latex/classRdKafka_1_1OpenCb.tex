@@ -1,0 +1,37 @@
+\hypertarget{classRdKafka_1_1OpenCb}{
+\section{RdKafka::OpenCb Class Reference}
+\label{classRdKafka_1_1OpenCb}\index{RdKafka::OpenCb@{RdKafka::OpenCb}}
+}
+
+
+{\bfseries Portability:} \hyperlink{classRdKafka_1_1OpenCb}{OpenCb} callback class  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classRdKafka_1_1OpenCb_a85d9605e2551aa43eca61f218ad47d54}{open\_\-cb} (const std::string \&path, int flags, int mode)=0
+\begin{DoxyCompactList}\small\item\em Open callback The open callback is responsible for opening the file specified by {\ttfamily pathname}, using {\ttfamily flags} and {\ttfamily mode}. The file shall be opened with {\ttfamily CLOEXEC} set in a racefree fashion, if possible. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\bfseries Portability:} \hyperlink{classRdKafka_1_1OpenCb}{OpenCb} callback class 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1OpenCb_a85d9605e2551aa43eca61f218ad47d54}{
+\index{RdKafka::OpenCb@{RdKafka::OpenCb}!open\_\-cb@{open\_\-cb}}
+\index{open\_\-cb@{open\_\-cb}!RdKafka::OpenCb@{RdKafka::OpenCb}}
+\subsubsection[{open\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::OpenCb::open\_\-cb (const std::string \& {\em path}, \/  int {\em flags}, \/  int {\em mode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1OpenCb_a85d9605e2551aa43eca61f218ad47d54}
+
+
+Open callback The open callback is responsible for opening the file specified by {\ttfamily pathname}, using {\ttfamily flags} and {\ttfamily mode}. The file shall be opened with {\ttfamily CLOEXEC} set in a racefree fashion, if possible. It is typically not required to register an alternative open implementation
+
+\begin{DoxyRemark}{Remarks}
+Not currently available on native Win32 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

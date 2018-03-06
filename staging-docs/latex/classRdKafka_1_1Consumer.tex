@@ -1,0 +1,193 @@
+\hypertarget{classRdKafka_1_1Consumer}{
+\section{RdKafka::Consumer Class Reference}
+\label{classRdKafka_1_1Consumer}\index{RdKafka::Consumer@{RdKafka::Consumer}}
+}
+
+
+Simple \hyperlink{classRdKafka_1_1Consumer}{Consumer} (legacy).  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}Inheritance diagram for RdKafka::Consumer:Collaboration diagram for RdKafka::Consumer:\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int64\_\-t offset)=0
+\begin{DoxyCompactList}\small\item\em Start consuming messages for topic and {\ttfamily partition} at offset {\ttfamily offset} which may either be a proper offset (0..N) or one of the the special offsets: {\ttfamily OFFSET\_\-BEGINNING} or {\ttfamily OFFSET\_\-END}. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Consumer_a096b4f201fef44fe4607a9b0b907a229}{start} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int64\_\-t offset, \hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue)=0
+\begin{DoxyCompactList}\small\item\em Start consuming messages for topic and {\ttfamily partition} on queue {\ttfamily queue}. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}{stop} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition)=0
+\begin{DoxyCompactList}\small\item\em Stop consuming messages for topic and {\ttfamily partition}, purging all messages currently in the local queue. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Consumer_ac7917098034f6c653aadb497df6ae1de}{seek} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int64\_\-t offset, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Seek consumer for topic+partition to {\ttfamily offset} which is either an absolute or logical offset. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Consume a single message from {\ttfamily topic} and {\ttfamily partition}. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ \hyperlink{classRdKafka_1_1Consumer_a2393e5cc720f1e08231037af9e4b6ac5}{consume} (\hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue, int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Consume a single message from the specified queue. \item\end{DoxyCompactList}\item 
+virtual int \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{consume\_\-callback} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\_\-t partition, int timeout\_\-ms, \hyperlink{classRdKafka_1_1ConsumeCb}{ConsumeCb} $\ast$consume\_\-cb, void $\ast$opaque)=0
+\begin{DoxyCompactList}\small\item\em Consumes messages from {\ttfamily topic} and {\ttfamily partition}, calling the provided callback for each consumed messsage. \item\end{DoxyCompactList}\item 
+virtual int \hyperlink{classRdKafka_1_1Consumer_a992d17b68c36e500cfa7332c23d112ba}{consume\_\-callback} (\hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue, int timeout\_\-ms, \hyperlink{classRdKafka_1_1ConsumeCb}{RdKafka::ConsumeCb} $\ast$consume\_\-cb, void $\ast$opaque)=0
+\begin{DoxyCompactList}\small\item\em Consumes messages from {\ttfamily queue}, calling the provided callback for each consumed messsage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Consumer}{Consumer} $\ast$ \hyperlink{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}{create} (\hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std::string \&errstr)
+\begin{DoxyCompactList}\small\item\em Creates a new Kafka consumer handle. \item\end{DoxyCompactList}\item 
+static int64\_\-t \hyperlink{classRdKafka_1_1Consumer_a7ad238e24f96a58540f96714e1e292b0}{OffsetTail} (int64\_\-t offset)
+\begin{DoxyCompactList}\small\item\em Converts an offset into the logical offset from the tail of a topic. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple \hyperlink{classRdKafka_1_1Consumer}{Consumer} (legacy). A simple non-\/balanced, non-\/group-\/aware, consumer. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!create@{create}}
+\index{create@{create}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Consumer}$\ast$ RdKafka::Consumer::create ({\bf Conf} $\ast$ {\em conf}, \/  std::string \& {\em errstr})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}
+
+
+Creates a new Kafka consumer handle. {\ttfamily conf} is an optional object that will be used instead of the default configuration. The {\ttfamily conf} object is reusable after this call.
+
+\begin{DoxyReturn}{Returns}
+the new handle on success or NULL on error in which case {\ttfamily errstr} is set to a human readable error message. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!start@{start}}
+\index{start@{start}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Consumer::start ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition}, \/  int64\_\-t {\em offset})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}
+
+
+Start consuming messages for topic and {\ttfamily partition} at offset {\ttfamily offset} which may either be a proper offset (0..N) or one of the the special offsets: {\ttfamily OFFSET\_\-BEGINNING} or {\ttfamily OFFSET\_\-END}. rdkafka will attempt to keep {\ttfamily queued.min.messages} (config property) messages in the local queue by repeatedly fetching batches of messages from the broker until the threshold is reached.
+
+The application shall use one of the {\ttfamily }..-\/$>$consume$\ast$() functions to consume messages from the local queue, each kafka message being represented as a `RdKafkaMessage $\ast$` object.
+
+{\ttfamily }..-\/$>$\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()} must not be called multiple times for the same topic and partition without stopping consumption first with {\ttfamily }..-\/$>$\hyperlink{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}{stop()}.
+
+\begin{DoxyReturn}{Returns}
+an ErrorCode to indicate success or failure. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Consumer_a096b4f201fef44fe4607a9b0b907a229}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!start@{start}}
+\index{start@{start}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Consumer::start ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition}, \/  int64\_\-t {\em offset}, \/  {\bf Queue} $\ast$ {\em queue})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a096b4f201fef44fe4607a9b0b907a229}
+
+
+Start consuming messages for topic and {\ttfamily partition} on queue {\ttfamily queue}. \begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{RdKafka::Consumer::start()} 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!stop@{stop}}
+\index{stop@{stop}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Consumer::stop ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}
+
+
+Stop consuming messages for topic and {\ttfamily partition}, purging all messages currently in the local queue. The application needs to be stop all consumers before destroying the \hyperlink{classRdKafka_1_1Consumer}{Consumer} handle.
+
+\begin{DoxyReturn}{Returns}
+an ErrorCode to indicate success or failure. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Consumer_ac7917098034f6c653aadb497df6ae1de}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!seek@{seek}}
+\index{seek@{seek}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{seek}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Consumer::seek ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition}, \/  int64\_\-t {\em offset}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_ac7917098034f6c653aadb497df6ae1de}
+
+
+Seek consumer for topic+partition to {\ttfamily offset} which is either an absolute or logical offset. If {\ttfamily timeout\_\-ms} is not 0 the call will wait this long for the seek to be performed. If the timeout is reached the internal state will be unknown and this function returns `ERR\_\-\_\-TIMED\_\-OUT`. If {\ttfamily timeout\_\-ms} is 0 it will initiate the seek but return immediately without any error reporting (e.g., async).
+
+This call triggers a fetch queue barrier flush.
+
+\begin{DoxyReturn}{Returns}
+an ErrorCode to indicate success or failure. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!consume@{consume}}
+\index{consume@{consume}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Message}$\ast$ RdKafka::Consumer::consume ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}
+
+
+Consume a single message from {\ttfamily topic} and {\ttfamily partition}. {\ttfamily timeout\_\-ms} is maximum amount of time to wait for a message to be received. \hyperlink{classRdKafka_1_1Consumer}{Consumer} must have been previously started with {\ttfamily }..-\/$>$\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()}.
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classRdKafka_1_1Message}{Message} object, the application needs to check if message is an error or a proper message \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} and checking for {\ttfamily ERR\_\-NO\_\-ERROR}.
+\end{DoxyReturn}
+The message object must be destroyed when the application is done with it.
+
+Errors (in \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()}):
+\begin{DoxyItemize}
+\item ERR\_\-\_\-TIMED\_\-OUT -\/ {\ttfamily timeout\_\-ms} was reached with no new messages fetched.
+\item ERR\_\-\_\-PARTITION\_\-EOF -\/ End of partition reached, not an error. 
+\end{DoxyItemize}\hypertarget{classRdKafka_1_1Consumer_a2393e5cc720f1e08231037af9e4b6ac5}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!consume@{consume}}
+\index{consume@{consume}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Message}$\ast$ RdKafka::Consumer::consume ({\bf Queue} $\ast$ {\em queue}, \/  int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a2393e5cc720f1e08231037af9e4b6ac5}
+
+
+Consume a single message from the specified queue. {\ttfamily timeout\_\-ms} is maximum amount of time to wait for a message to be received. \hyperlink{classRdKafka_1_1Consumer}{Consumer} must have been previously started on the queue with {\ttfamily }..-\/$>$\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()}.
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classRdKafka_1_1Message}{Message} object, the application needs to check if message is an error or a proper message {\ttfamily Message-\/$>$err()} and checking for {\ttfamily ERR\_\-NO\_\-ERROR}.
+\end{DoxyReturn}
+The message object must be destroyed when the application is done with it.
+
+Errors (in \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()}):
+\begin{DoxyItemize}
+\item ERR\_\-\_\-TIMED\_\-OUT -\/ {\ttfamily timeout\_\-ms} was reached with no new messages fetched
+\end{DoxyItemize}
+
+Note that Message-\/$>$topic() may be nullptr after certain kinds of errors, so applications should check that it isn't null before dereferencing it. \hypertarget{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!consume\_\-callback@{consume\_\-callback}}
+\index{consume\_\-callback@{consume\_\-callback}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{consume\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Consumer::consume\_\-callback ({\bf Topic} $\ast$ {\em topic}, \/  int32\_\-t {\em partition}, \/  int {\em timeout\_\-ms}, \/  {\bf ConsumeCb} $\ast$ {\em consume\_\-cb}, \/  void $\ast$ {\em opaque})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}
+
+
+Consumes messages from {\ttfamily topic} and {\ttfamily partition}, calling the provided callback for each consumed messsage. {\ttfamily \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{consume\_\-callback()}} provides higher throughput performance than {\ttfamily \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume()}}.
+
+{\ttfamily timeout\_\-ms} is the maximum amount of time to wait for one or more messages to arrive.
+
+The provided {\ttfamily consume\_\-cb} instance has its {\ttfamily consume\_\-cb} function called for every message received.
+
+The {\ttfamily opaque} argument is passed to the {\ttfamily consume\_\-cb} as {\ttfamily opaque}.
+
+\begin{DoxyReturn}{Returns}
+the number of messages processed or -\/1 on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{RdKafka::Consumer::consume()} 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1Consumer_a992d17b68c36e500cfa7332c23d112ba}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!consume\_\-callback@{consume\_\-callback}}
+\index{consume\_\-callback@{consume\_\-callback}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{consume\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Consumer::consume\_\-callback ({\bf Queue} $\ast$ {\em queue}, \/  int {\em timeout\_\-ms}, \/  {\bf RdKafka::ConsumeCb} $\ast$ {\em consume\_\-cb}, \/  void $\ast$ {\em opaque})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a992d17b68c36e500cfa7332c23d112ba}
+
+
+Consumes messages from {\ttfamily queue}, calling the provided callback for each consumed messsage. \begin{DoxySeeAlso}{See also}
+\hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{RdKafka::Consumer::consume\_\-callback()} 
+\end{DoxySeeAlso}
+\hypertarget{classRdKafka_1_1Consumer_a7ad238e24f96a58540f96714e1e292b0}{
+\index{RdKafka::Consumer@{RdKafka::Consumer}!OffsetTail@{OffsetTail}}
+\index{OffsetTail@{OffsetTail}!RdKafka::Consumer@{RdKafka::Consumer}}
+\subsubsection[{OffsetTail}]{\setlength{\rightskip}{0pt plus 5cm}static int64\_\-t RdKafka::Consumer::OffsetTail (int64\_\-t {\em offset})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Consumer_a7ad238e24f96a58540f96714e1e292b0}
+
+
+Converts an offset into the logical offset from the tail of a topic. {\ttfamily offset} is the (positive) number of items from the end.
+
+\begin{DoxyReturn}{Returns}
+the logical offset for message {\ttfamily offset} from the tail, this value may be passed to \hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{Consumer::start}, et.al. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+The returned logical offset is specific to librdkafka. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

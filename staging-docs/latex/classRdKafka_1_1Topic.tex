@@ -1,0 +1,143 @@
+\hypertarget{classRdKafka_1_1Topic}{
+\section{RdKafka::Topic Class Reference}
+\label{classRdKafka_1_1Topic}\index{RdKafka::Topic@{RdKafka::Topic}}
+}
+
+
+\hyperlink{classRdKafka_1_1Topic}{Topic} handle.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std::string \hyperlink{classRdKafka_1_1Topic_af61ec8b3c384a8de5a12f804e771c63d}{name} () const =0
+\item 
+virtual bool \hyperlink{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}{partition\_\-available} (int32\_\-t partition) const =0
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Topic_a218a291c89f5d4c311bec3c2b2bd8056}{offset\_\-store} (int32\_\-t partition, int64\_\-t offset)=0
+\begin{DoxyCompactList}\small\item\em Store offset {\ttfamily offset} for topic partition {\ttfamily partition}. The offset will be committed (written) to the offset store according to {\ttfamily auto.commit.interval.ms}. \item\end{DoxyCompactList}\item 
+virtual struct rd\_\-kafka\_\-topic\_\-s $\ast$ \hyperlink{classRdKafka_1_1Topic_ab2b9c16211db4036939d95a5dbd07c94}{c\_\-ptr} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the underlying librdkafka C rd\_\-kafka\_\-topic\_\-t handle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$ \hyperlink{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}{create} (\hyperlink{classRdKafka_1_1Handle}{Handle} $\ast$base, const std::string \&topic\_\-str, \hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std::string \&errstr)
+\begin{DoxyCompactList}\small\item\em Creates a new topic handle for topic named {\ttfamily topic\_\-str}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int32\_\-t \hyperlink{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}{PARTITION\_\-UA}
+\begin{DoxyCompactList}\small\item\em Unassigned partition. \item\end{DoxyCompactList}\item 
+static const int64\_\-t \hyperlink{classRdKafka_1_1Topic_a5d3aa07897b2a84dd23aa501318be42a}{OFFSET\_\-BEGINNING}
+\begin{DoxyCompactList}\small\item\em Special offsets. \item\end{DoxyCompactList}\item 
+static const int64\_\-t \hyperlink{classRdKafka_1_1Topic_ac13c22ede4c3475282e3bd80a4fa969f}{OFFSET\_\-END}
+\item 
+static const int64\_\-t \hyperlink{classRdKafka_1_1Topic_a94be7a8729b679e1065910acd0cd7fff}{OFFSET\_\-STORED}
+\item 
+static const int64\_\-t \hyperlink{classRdKafka_1_1Topic_a01bf1a7bec9ce67de81239d81722237b}{OFFSET\_\-INVALID}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Topic}{Topic} handle. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}{
+\index{RdKafka::Topic@{RdKafka::Topic}!create@{create}}
+\index{create@{create}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Topic}$\ast$ RdKafka::Topic::create ({\bf Handle} $\ast$ {\em base}, \/  const std::string \& {\em topic\_\-str}, \/  {\bf Conf} $\ast$ {\em conf}, \/  std::string \& {\em errstr})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}
+
+
+Creates a new topic handle for topic named {\ttfamily topic\_\-str}. {\ttfamily conf} is an optional configuration for the topic that will be used instead of the default topic configuration. The {\ttfamily conf} object is reusable after this call.
+
+\begin{DoxyReturn}{Returns}
+the new topic handle or NULL on error (see {\ttfamily errstr}). 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Topic_af61ec8b3c384a8de5a12f804e771c63d}{
+\index{RdKafka::Topic@{RdKafka::Topic}!name@{name}}
+\index{name@{name}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string RdKafka::Topic::name () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Topic_af61ec8b3c384a8de5a12f804e771c63d}
+\begin{DoxyReturn}{Returns}
+the topic name 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}{
+\index{RdKafka::Topic@{RdKafka::Topic}!partition\_\-available@{partition\_\-available}}
+\index{partition\_\-available@{partition\_\-available}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{partition\_\-available}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RdKafka::Topic::partition\_\-available (int32\_\-t {\em partition}) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily partition} is available for the topic (has leader). 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+{\bfseries MUST} {\bfseries ONLY} be called from within a \hyperlink{classRdKafka_1_1PartitionerCb}{RdKafka::PartitionerCb} callback. 
+\end{DoxyWarning}
+\hypertarget{classRdKafka_1_1Topic_a218a291c89f5d4c311bec3c2b2bd8056}{
+\index{RdKafka::Topic@{RdKafka::Topic}!offset\_\-store@{offset\_\-store}}
+\index{offset\_\-store@{offset\_\-store}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{offset\_\-store}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Topic::offset\_\-store (int32\_\-t {\em partition}, \/  int64\_\-t {\em offset})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Topic_a218a291c89f5d4c311bec3c2b2bd8056}
+
+
+Store offset {\ttfamily offset} for topic partition {\ttfamily partition}. The offset will be committed (written) to the offset store according to {\ttfamily auto.commit.interval.ms}. \begin{DoxyRemark}{Remarks}
+{\ttfamily enable.auto.offset.store} must be set to {\ttfamily false} when using this API.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+RdKafka::ERR\_\-NO\_\-ERROR on success or an error code if none of the offsets could be stored. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Topic_ab2b9c16211db4036939d95a5dbd07c94}{
+\index{RdKafka::Topic@{RdKafka::Topic}!c\_\-ptr@{c\_\-ptr}}
+\index{c\_\-ptr@{c\_\-ptr}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{c\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}virtual struct rd\_\-kafka\_\-topic\_\-s$\ast$ RdKafka::Topic::c\_\-ptr ()\hspace{0.3cm}{\ttfamily  \mbox{[}read, pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Topic_ab2b9c16211db4036939d95a5dbd07c94}
+
+
+Returns the underlying librdkafka C rd\_\-kafka\_\-topic\_\-t handle. \begin{DoxyWarning}{Warning}
+Calling the C API on this handle is not recommended and there is no official support for it, but for cases where the C++ API does not provide the underlying functionality this C handle can be used to interact directly with the core librdkafka API.
+\end{DoxyWarning}
+\begin{DoxyRemark}{Remarks}
+The lifetime of the returned pointer is the same as the \hyperlink{classRdKafka_1_1Topic}{Topic} object this method is called on.
+
+Include $<$rdkafka/rdkafka.h$>$ prior to including $<$rdkafka/rdkafkacpp.h$>$
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+{\ttfamily rd\_\-kafka\_\-topic\_\-t$\ast$} 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}{
+\index{RdKafka::Topic@{RdKafka::Topic}!PARTITION\_\-UA@{PARTITION\_\-UA}}
+\index{PARTITION\_\-UA@{PARTITION\_\-UA}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{PARTITION\_\-UA}]{\setlength{\rightskip}{0pt plus 5cm}const int32\_\-t {\bf RdKafka::Topic::PARTITION\_\-UA}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}
+
+
+Unassigned partition. The unassigned partition is used by the producer API for messages that should be partitioned using the configured or default partitioner. \hypertarget{classRdKafka_1_1Topic_a5d3aa07897b2a84dd23aa501318be42a}{
+\index{RdKafka::Topic@{RdKafka::Topic}!OFFSET\_\-BEGINNING@{OFFSET\_\-BEGINNING}}
+\index{OFFSET\_\-BEGINNING@{OFFSET\_\-BEGINNING}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{OFFSET\_\-BEGINNING}]{\setlength{\rightskip}{0pt plus 5cm}const int64\_\-t {\bf RdKafka::Topic::OFFSET\_\-BEGINNING}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Topic_a5d3aa07897b2a84dd23aa501318be42a}
+
+
+Special offsets. Consume from beginning \hypertarget{classRdKafka_1_1Topic_ac13c22ede4c3475282e3bd80a4fa969f}{
+\index{RdKafka::Topic@{RdKafka::Topic}!OFFSET\_\-END@{OFFSET\_\-END}}
+\index{OFFSET\_\-END@{OFFSET\_\-END}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{OFFSET\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}const int64\_\-t {\bf RdKafka::Topic::OFFSET\_\-END}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Topic_ac13c22ede4c3475282e3bd80a4fa969f}
+Consume from end \hypertarget{classRdKafka_1_1Topic_a94be7a8729b679e1065910acd0cd7fff}{
+\index{RdKafka::Topic@{RdKafka::Topic}!OFFSET\_\-STORED@{OFFSET\_\-STORED}}
+\index{OFFSET\_\-STORED@{OFFSET\_\-STORED}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{OFFSET\_\-STORED}]{\setlength{\rightskip}{0pt plus 5cm}const int64\_\-t {\bf RdKafka::Topic::OFFSET\_\-STORED}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Topic_a94be7a8729b679e1065910acd0cd7fff}
+Use offset storage \hypertarget{classRdKafka_1_1Topic_a01bf1a7bec9ce67de81239d81722237b}{
+\index{RdKafka::Topic@{RdKafka::Topic}!OFFSET\_\-INVALID@{OFFSET\_\-INVALID}}
+\index{OFFSET\_\-INVALID@{OFFSET\_\-INVALID}!RdKafka::Topic@{RdKafka::Topic}}
+\subsubsection[{OFFSET\_\-INVALID}]{\setlength{\rightskip}{0pt plus 5cm}const int64\_\-t {\bf RdKafka::Topic::OFFSET\_\-INVALID}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1Topic_a01bf1a7bec9ce67de81239d81722237b}
+Invalid offset 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

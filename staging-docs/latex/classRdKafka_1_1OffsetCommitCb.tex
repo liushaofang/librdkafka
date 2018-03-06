@@ -1,0 +1,42 @@
+\hypertarget{classRdKafka_1_1OffsetCommitCb}{
+\section{RdKafka::OffsetCommitCb Class Reference}
+\label{classRdKafka_1_1OffsetCommitCb}\index{RdKafka::OffsetCommitCb@{RdKafka::OffsetCommitCb}}
+}
+
+
+Offset Commit callback class.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRdKafka_1_1OffsetCommitCb_adba61797f3db9fd4acf97c3b31deb413}{offset\_\-commit\_\-cb} (RdKafka::ErrorCode err, std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&offsets)=0
+\begin{DoxyCompactList}\small\item\em Set offset commit callback for use with consumer groups. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Offset Commit callback class. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1OffsetCommitCb_adba61797f3db9fd4acf97c3b31deb413}{
+\index{RdKafka::OffsetCommitCb@{RdKafka::OffsetCommitCb}!offset\_\-commit\_\-cb@{offset\_\-commit\_\-cb}}
+\index{offset\_\-commit\_\-cb@{offset\_\-commit\_\-cb}!RdKafka::OffsetCommitCb@{RdKafka::OffsetCommitCb}}
+\subsubsection[{offset\_\-commit\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RdKafka::OffsetCommitCb::offset\_\-commit\_\-cb (RdKafka::ErrorCode {\em err}, \/  std::vector$<$ {\bf TopicPartition} $\ast$ $>$ \& {\em offsets})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1OffsetCommitCb_adba61797f3db9fd4acf97c3b31deb413}
+
+
+Set offset commit callback for use with consumer groups. The results of automatic or manual offset commits will be scheduled for this callback and is served by \hyperlink{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{RdKafka::KafkaConsumer::consume()}.
+
+If no partitions had valid offsets to commit this callback will be called with {\ttfamily err} == ERR\_\-\_\-NO\_\-OFFSET which is not to be considered an error.
+
+The {\ttfamily offsets} list contains per-\/partition information:
+\begin{DoxyItemize}
+\item {\ttfamily topic} The topic committed
+\item {\ttfamily partition} The partition committed
+\item {\ttfamily offset:} Committed offset (attempted)
+\item {\ttfamily err:} Commit error 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

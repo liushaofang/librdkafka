@@ -1,0 +1,92 @@
+\hypertarget{classRdKafka_1_1TopicPartition}{
+\section{RdKafka::TopicPartition Class Reference}
+\label{classRdKafka_1_1TopicPartition}\index{RdKafka::TopicPartition@{RdKafka::TopicPartition}}
+}
+
+
+Topic+Partition.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std::string \& \hyperlink{classRdKafka_1_1TopicPartition_a1e1d34726a70a1109f67202f74d1e6b4}{topic} () const =0
+\item 
+virtual int \hyperlink{classRdKafka_1_1TopicPartition_aac977298931c0488e0c759c896aa7418}{partition} () const =0
+\item 
+virtual int64\_\-t \hyperlink{classRdKafka_1_1TopicPartition_adaa8701081082dd24e8897d1f2b3f75d}{offset} () const =0
+\item 
+\hypertarget{classRdKafka_1_1TopicPartition_a8dfaa301f6ee2b079ba5ba27d2df8c26}{
+virtual void \hyperlink{classRdKafka_1_1TopicPartition_a8dfaa301f6ee2b079ba5ba27d2df8c26}{set\_\-offset} (int64\_\-t offset)=0}
+\label{classRdKafka_1_1TopicPartition_a8dfaa301f6ee2b079ba5ba27d2df8c26}
+
+\begin{DoxyCompactList}\small\item\em Set offset. \item\end{DoxyCompactList}\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1TopicPartition_adf4cd4ca1ed51f1829fddd475b96adee}{err} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ \hyperlink{classRdKafka_1_1TopicPartition_acb929236c0604a595e53154c3552d399}{create} (const std::string \&topic, int partition)
+\item 
+\hypertarget{classRdKafka_1_1TopicPartition_a6a51b78cb44ec64e4e425f96337bae41}{
+static \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ {\bfseries create} (const std::string \&topic, int partition, int64\_\-t offset)}
+\label{classRdKafka_1_1TopicPartition_a6a51b78cb44ec64e4e425f96337bae41}
+
+\item 
+\hypertarget{classRdKafka_1_1TopicPartition_a0b9bdc4f29b886466f87ff8420d4e5b6}{
+static void \hyperlink{classRdKafka_1_1TopicPartition_a0b9bdc4f29b886466f87ff8420d4e5b6}{destroy} (std::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{TopicPartition} $\ast$ $>$ \&partitions)}
+\label{classRdKafka_1_1TopicPartition_a0b9bdc4f29b886466f87ff8420d4e5b6}
+
+\begin{DoxyCompactList}\small\item\em Destroy/delete the TopicPartitions in {\ttfamily partitions} and clear the vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Topic+Partition. This is a generic type to hold a single partition and various information about it.
+
+Is typically used with std::vector$<$RdKafka::TopicPartition$\ast$$>$ to provide a list of partitions for different operations. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1TopicPartition_acb929236c0604a595e53154c3552d399}{
+\index{RdKafka::TopicPartition@{RdKafka::TopicPartition}!create@{create}}
+\index{create@{create}!RdKafka::TopicPartition@{RdKafka::TopicPartition}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf TopicPartition}$\ast$ RdKafka::TopicPartition::create (const std::string \& {\em topic}, \/  int {\em partition})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRdKafka_1_1TopicPartition_acb929236c0604a595e53154c3552d399}
+Create topic+partition object for {\ttfamily topic} and {\ttfamily partition} and optionally {\ttfamily offset}.
+
+Use {\ttfamily delete} to deconstruct. \hypertarget{classRdKafka_1_1TopicPartition_a1e1d34726a70a1109f67202f74d1e6b4}{
+\index{RdKafka::TopicPartition@{RdKafka::TopicPartition}!topic@{topic}}
+\index{topic@{topic}!RdKafka::TopicPartition@{RdKafka::TopicPartition}}
+\subsubsection[{topic}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& RdKafka::TopicPartition::topic () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicPartition_a1e1d34726a70a1109f67202f74d1e6b4}
+\begin{DoxyReturn}{Returns}
+topic name 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1TopicPartition_aac977298931c0488e0c759c896aa7418}{
+\index{RdKafka::TopicPartition@{RdKafka::TopicPartition}!partition@{partition}}
+\index{partition@{partition}!RdKafka::TopicPartition@{RdKafka::TopicPartition}}
+\subsubsection[{partition}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::TopicPartition::partition () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicPartition_aac977298931c0488e0c759c896aa7418}
+\begin{DoxyReturn}{Returns}
+partition id 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1TopicPartition_adaa8701081082dd24e8897d1f2b3f75d}{
+\index{RdKafka::TopicPartition@{RdKafka::TopicPartition}!offset@{offset}}
+\index{offset@{offset}!RdKafka::TopicPartition@{RdKafka::TopicPartition}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}virtual int64\_\-t RdKafka::TopicPartition::offset () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicPartition_adaa8701081082dd24e8897d1f2b3f75d}
+\begin{DoxyReturn}{Returns}
+offset (if applicable) 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1TopicPartition_adf4cd4ca1ed51f1829fddd475b96adee}{
+\index{RdKafka::TopicPartition@{RdKafka::TopicPartition}!err@{err}}
+\index{err@{err}!RdKafka::TopicPartition@{RdKafka::TopicPartition}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::TopicPartition::err () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1TopicPartition_adf4cd4ca1ed51f1829fddd475b96adee}
+\begin{DoxyReturn}{Returns}
+error code (if applicable) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

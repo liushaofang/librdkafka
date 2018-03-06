@@ -22,7 +22,6 @@ gmon.out
 *.bz2
 *.deb
 *.rpm
-staging-docs
 tmp
 stats*.json
 test_report*.json

@@ -1,0 +1,192 @@
+\hypertarget{classRdKafka_1_1Event}{
+\section{RdKafka::Event Class Reference}
+\label{classRdKafka_1_1Event}\index{RdKafka::Event@{RdKafka::Event}}
+}
+
+
+\hyperlink{classRdKafka_1_1Event}{Event} object class as passed to the \hyperlink{classRdKafka_1_1EventCb}{EventCb} callback.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25}{Type} \{ \par
+\hyperlink{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25a735af2a296b96a5a80c49fbd8ceb1e72}{EVENT\_\-ERROR}, 
+\par
+\hyperlink{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25ad3f00ea86b21113eff51499c3815b2f6}{EVENT\_\-STATS}, 
+\par
+\hyperlink{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25af13151bd09f1313ea1e521a3d85e56e3}{EVENT\_\-LOG}, 
+\par
+\hyperlink{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25ac0b85460c3d63bfd5fe0b2d76eb52112}{EVENT\_\-THROTTLE}
+ \}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRdKafka_1_1Event}{Event} type. \item\end{DoxyCompactList}\item 
+enum \hyperlink{classRdKafka_1_1Event_a97aab314006c6c1a82dcd341e5c0e6d3}{Severity} \{ \par
+{\bfseries EVENT\_\-SEVERITY\_\-EMERG} =  0, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-ALERT} =  1, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-CRITICAL} =  2, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-ERROR} =  3, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-WARNING} =  4, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-NOTICE} =  5, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-INFO} =  6, 
+\par
+{\bfseries EVENT\_\-SEVERITY\_\-DEBUG} =  7
+ \}
+\begin{DoxyCompactList}\small\item\em EVENT\_\-LOG severities (conforms to syslog(3) severities). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25}{Type} \hyperlink{classRdKafka_1_1Event_a8bf41860541c6549cccd298b0a4ceb6e}{type} () const =0
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Event_a6631f15dccbf775a3fa43a1aba8828ab}{err} () const =0
+\item 
+virtual \hyperlink{classRdKafka_1_1Event_a97aab314006c6c1a82dcd341e5c0e6d3}{Severity} \hyperlink{classRdKafka_1_1Event_ab98e758dea9aa13eb1421f625e206b16}{severity} () const =0
+\item 
+virtual std::string \hyperlink{classRdKafka_1_1Event_a60dbe2545a614b2706594d384156dfa4}{fac} () const =0
+\item 
+virtual std::string \hyperlink{classRdKafka_1_1Event_a94f84a103b017b21d7ede84fbbf9d7ed}{str} () const =0
+\item 
+virtual int \hyperlink{classRdKafka_1_1Event_a21be0397c0bc18657d90341a1eeb1db5}{throttle\_\-time} () const =0
+\item 
+virtual std::string \hyperlink{classRdKafka_1_1Event_a3295812d6be66d4f601ca7055a26f9ef}{broker\_\-name} () const =0
+\item 
+virtual int \hyperlink{classRdKafka_1_1Event_ac4355a247e321448d3ae29655da7b724}{broker\_\-id} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Event}{Event} object class as passed to the \hyperlink{classRdKafka_1_1EventCb}{EventCb} callback. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25}{
+\index{RdKafka::Event@{RdKafka::Event}!Type@{Type}}
+\index{Type@{Type}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RdKafka::Event::Type}}}
+\label{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25}
+
+
+\hyperlink{classRdKafka_1_1Event}{Event} type. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{EVENT\_\-ERROR@{EVENT\_\-ERROR}!RdKafka::Event@{RdKafka::Event}}\index{RdKafka::Event@{RdKafka::Event}!EVENT\_\-ERROR@{EVENT\_\-ERROR}}\item[{\em 
+\hypertarget{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25a735af2a296b96a5a80c49fbd8ceb1e72}{
+EVENT\_\-ERROR}
+\label{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25a735af2a296b96a5a80c49fbd8ceb1e72}
+}]\hyperlink{classRdKafka_1_1Event}{Event} is an error condition \index{EVENT\_\-STATS@{EVENT\_\-STATS}!RdKafka::Event@{RdKafka::Event}}\index{RdKafka::Event@{RdKafka::Event}!EVENT\_\-STATS@{EVENT\_\-STATS}}\item[{\em 
+\hypertarget{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25ad3f00ea86b21113eff51499c3815b2f6}{
+EVENT\_\-STATS}
+\label{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25ad3f00ea86b21113eff51499c3815b2f6}
+}]\hyperlink{classRdKafka_1_1Event}{Event} is a statistics JSON document \index{EVENT\_\-LOG@{EVENT\_\-LOG}!RdKafka::Event@{RdKafka::Event}}\index{RdKafka::Event@{RdKafka::Event}!EVENT\_\-LOG@{EVENT\_\-LOG}}\item[{\em 
+\hypertarget{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25af13151bd09f1313ea1e521a3d85e56e3}{
+EVENT\_\-LOG}
+\label{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25af13151bd09f1313ea1e521a3d85e56e3}
+}]\hyperlink{classRdKafka_1_1Event}{Event} is a log message \index{EVENT\_\-THROTTLE@{EVENT\_\-THROTTLE}!RdKafka::Event@{RdKafka::Event}}\index{RdKafka::Event@{RdKafka::Event}!EVENT\_\-THROTTLE@{EVENT\_\-THROTTLE}}\item[{\em 
+\hypertarget{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25ac0b85460c3d63bfd5fe0b2d76eb52112}{
+EVENT\_\-THROTTLE}
+\label{classRdKafka_1_1Event_ab087b57a8ddf5c46d722999a010b8f25ac0b85460c3d63bfd5fe0b2d76eb52112}
+}]\hyperlink{classRdKafka_1_1Event}{Event} is a throttle level signaling from the broker \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Event_a8bf41860541c6549cccd298b0a4ceb6e}{
+\index{RdKafka::Event@{RdKafka::Event}!type@{type}}
+\index{type@{type}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Type} RdKafka::Event::type () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_a8bf41860541c6549cccd298b0a4ceb6e}
+\begin{DoxyReturn}{Returns}
+The event type 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to all event types 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_a6631f15dccbf775a3fa43a1aba8828ab}{
+\index{RdKafka::Event@{RdKafka::Event}!err@{err}}
+\index{err@{err}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Event::err () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_a6631f15dccbf775a3fa43a1aba8828ab}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRdKafka_1_1Event}{Event} error, if any. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to all event types except THROTTLE 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_ab98e758dea9aa13eb1421f625e206b16}{
+\index{RdKafka::Event@{RdKafka::Event}!severity@{severity}}
+\index{severity@{severity}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{severity}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Severity} RdKafka::Event::severity () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_ab98e758dea9aa13eb1421f625e206b16}
+\begin{DoxyReturn}{Returns}
+Log severity level. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to LOG event type. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_a60dbe2545a614b2706594d384156dfa4}{
+\index{RdKafka::Event@{RdKafka::Event}!fac@{fac}}
+\index{fac@{fac}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{fac}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string RdKafka::Event::fac () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_a60dbe2545a614b2706594d384156dfa4}
+\begin{DoxyReturn}{Returns}
+Log facility string. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to LOG event type. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_a94f84a103b017b21d7ede84fbbf9d7ed}{
+\index{RdKafka::Event@{RdKafka::Event}!str@{str}}
+\index{str@{str}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string RdKafka::Event::str () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_a94f84a103b017b21d7ede84fbbf9d7ed}
+\begin{DoxyReturn}{Returns}
+Log message string.
+\end{DoxyReturn}
+{\ttfamily EVENT\_\-LOG:} Log message string. {\ttfamily EVENT\_\-STATS:} JSON object (as string).
+
+\begin{DoxyRemark}{Remarks}
+Applies to LOG event type. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_a21be0397c0bc18657d90341a1eeb1db5}{
+\index{RdKafka::Event@{RdKafka::Event}!throttle\_\-time@{throttle\_\-time}}
+\index{throttle\_\-time@{throttle\_\-time}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{throttle\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Event::throttle\_\-time () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_a21be0397c0bc18657d90341a1eeb1db5}
+\begin{DoxyReturn}{Returns}
+Throttle time in milliseconds. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to THROTTLE event type. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_a3295812d6be66d4f601ca7055a26f9ef}{
+\index{RdKafka::Event@{RdKafka::Event}!broker\_\-name@{broker\_\-name}}
+\index{broker\_\-name@{broker\_\-name}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{broker\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string RdKafka::Event::broker\_\-name () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_a3295812d6be66d4f601ca7055a26f9ef}
+\begin{DoxyReturn}{Returns}
+Throttling broker's name. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to THROTTLE event type. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Event_ac4355a247e321448d3ae29655da7b724}{
+\index{RdKafka::Event@{RdKafka::Event}!broker\_\-id@{broker\_\-id}}
+\index{broker\_\-id@{broker\_\-id}!RdKafka::Event@{RdKafka::Event}}
+\subsubsection[{broker\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Event::broker\_\-id () const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Event_ac4355a247e321448d3ae29655da7b724}
+\begin{DoxyReturn}{Returns}
+Throttling broker's id. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Applies to THROTTLE event type. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

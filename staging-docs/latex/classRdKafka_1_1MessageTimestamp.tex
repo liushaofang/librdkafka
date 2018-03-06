@@ -1,0 +1,81 @@
+\hypertarget{classRdKafka_1_1MessageTimestamp}{
+\section{RdKafka::MessageTimestamp Class Reference}
+\label{classRdKafka_1_1MessageTimestamp}\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}
+}
+
+
+\hyperlink{classRdKafka_1_1Message}{Message} timestamp object.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6e}{MessageTimestampType} \{ \par
+\hyperlink{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6eaf4a555c164095274a0d7834749023a8c}{MSG\_\-TIMESTAMP\_\-NOT\_\-AVAILABLE}, 
+\par
+\hyperlink{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6ea99a5a5d3ed1a0306739708a223754db8}{MSG\_\-TIMESTAMP\_\-CREATE\_\-TIME}, 
+\par
+\hyperlink{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6eaa85a7d97576097176459b7351b5f0c28}{MSG\_\-TIMESTAMP\_\-LOG\_\-APPEND\_\-TIME}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6e}{MessageTimestampType} \hyperlink{classRdKafka_1_1MessageTimestamp_aa6efe71306d83563f18d3da2554941fa}{type}
+\item 
+int64\_\-t \hyperlink{classRdKafka_1_1MessageTimestamp_a5b5b599eeaba1b9cf89d0da436707086}{timestamp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Message}{Message} timestamp object. Represents the number of milliseconds since the epoch (UTC).
+
+The MessageTimestampType dictates the timestamp type or origin.
+
+\begin{DoxyRemark}{Remarks}
+Requires Apache Kafka broker version $>$= 0.10.0 
+\end{DoxyRemark}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6e}{
+\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}!MessageTimestampType@{MessageTimestampType}}
+\index{MessageTimestampType@{MessageTimestampType}!RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}
+\subsubsection[{MessageTimestampType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RdKafka::MessageTimestamp::MessageTimestampType}}}
+\label{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6e}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{MSG\_\-TIMESTAMP\_\-NOT\_\-AVAILABLE@{MSG\_\-TIMESTAMP\_\-NOT\_\-AVAILABLE}!RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}!MSG\_\-TIMESTAMP\_\-NOT\_\-AVAILABLE@{MSG\_\-TIMESTAMP\_\-NOT\_\-AVAILABLE}}\item[{\em 
+\hypertarget{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6eaf4a555c164095274a0d7834749023a8c}{
+MSG\_\-TIMESTAMP\_\-NOT\_\-AVAILABLE}
+\label{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6eaf4a555c164095274a0d7834749023a8c}
+}]Timestamp not available \index{MSG\_\-TIMESTAMP\_\-CREATE\_\-TIME@{MSG\_\-TIMESTAMP\_\-CREATE\_\-TIME}!RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}!MSG\_\-TIMESTAMP\_\-CREATE\_\-TIME@{MSG\_\-TIMESTAMP\_\-CREATE\_\-TIME}}\item[{\em 
+\hypertarget{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6ea99a5a5d3ed1a0306739708a223754db8}{
+MSG\_\-TIMESTAMP\_\-CREATE\_\-TIME}
+\label{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6ea99a5a5d3ed1a0306739708a223754db8}
+}]\hyperlink{classRdKafka_1_1Message}{Message} creation time (source) \index{MSG\_\-TIMESTAMP\_\-LOG\_\-APPEND\_\-TIME@{MSG\_\-TIMESTAMP\_\-LOG\_\-APPEND\_\-TIME}!RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}!MSG\_\-TIMESTAMP\_\-LOG\_\-APPEND\_\-TIME@{MSG\_\-TIMESTAMP\_\-LOG\_\-APPEND\_\-TIME}}\item[{\em 
+\hypertarget{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6eaa85a7d97576097176459b7351b5f0c28}{
+MSG\_\-TIMESTAMP\_\-LOG\_\-APPEND\_\-TIME}
+\label{classRdKafka_1_1MessageTimestamp_a92887c5e7e4e81475fa01c3b88deba6eaa85a7d97576097176459b7351b5f0c28}
+}]\hyperlink{classRdKafka_1_1Message}{Message} log append time (broker) \end{description}
+\end{Desc}
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classRdKafka_1_1MessageTimestamp_aa6efe71306d83563f18d3da2554941fa}{
+\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}!type@{type}}
+\index{type@{type}!RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MessageTimestampType} {\bf RdKafka::MessageTimestamp::type}}}
+\label{classRdKafka_1_1MessageTimestamp_aa6efe71306d83563f18d3da2554941fa}
+Timestamp type \hypertarget{classRdKafka_1_1MessageTimestamp_a5b5b599eeaba1b9cf89d0da436707086}{
+\index{RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!RdKafka::MessageTimestamp@{RdKafka::MessageTimestamp}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}int64\_\-t {\bf RdKafka::MessageTimestamp::timestamp}}}
+\label{classRdKafka_1_1MessageTimestamp_a5b5b599eeaba1b9cf89d0da436707086}
+Milliseconds since epoch (UTC). 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

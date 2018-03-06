@@ -1,0 +1,29 @@
+\hypertarget{classRdKafka_1_1DeliveryReportCb}{
+\section{RdKafka::DeliveryReportCb Class Reference}
+\label{classRdKafka_1_1DeliveryReportCb}\index{RdKafka::DeliveryReportCb@{RdKafka::DeliveryReportCb}}
+}
+
+
+Delivery Report callback class.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1DeliveryReportCb_a9854b2576802b9e145e6ca402e1646ec}{
+virtual void \hyperlink{classRdKafka_1_1DeliveryReportCb_a9854b2576802b9e145e6ca402e1646ec}{dr\_\-cb} (\hyperlink{classRdKafka_1_1Message}{Message} \&message)=0}
+\label{classRdKafka_1_1DeliveryReportCb_a9854b2576802b9e145e6ca402e1646ec}
+
+\begin{DoxyCompactList}\small\item\em Delivery report callback. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Delivery Report callback class. The delivery report callback will be called once for each message accepted by \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{RdKafka::Producer::produce()} (et.al) with \hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} set to indicate the result of the produce request.
+
+The callback is called when a message is succesfully produced or if librdkafka encountered a permanent failure, or the retry counter for temporary errors has been exhausted.
+
+An application must call RdKafka::poll() at regular intervals to serve queued delivery report callbacks. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

@@ -1,0 +1,100 @@
+\hypertarget{classRdKafka_1_1Queue}{
+\section{RdKafka::Queue Class Reference}
+\label{classRdKafka_1_1Queue}\index{RdKafka::Queue@{RdKafka::Queue}}
+}
+
+
+\hyperlink{classRdKafka_1_1Queue}{Queue} interface.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ErrorCode \hyperlink{classRdKafka_1_1Queue_a49827afcb8804719ffc23d120915b371}{forward} (\hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$dst)=0
+\begin{DoxyCompactList}\small\item\em Forward/re-\/route queue to {\ttfamily dst}. If {\ttfamily dst} is {\ttfamily NULL}, the forwarding is removed. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ \hyperlink{classRdKafka_1_1Queue_aa8a0ff1e3df108e8bb6c9ef611f5eef4}{consume} (int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Consume message or get error event from the queue. \item\end{DoxyCompactList}\item 
+virtual int \hyperlink{classRdKafka_1_1Queue_a4d37e2fdf4579876f4ae3f315bc2e74d}{poll} (int timeout\_\-ms)=0
+\begin{DoxyCompactList}\small\item\em Poll queue, serving any enqueued callbacks. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classRdKafka_1_1Queue_a91ec180ff3b7f3a97be7b7e30163625c}{io\_\-event\_\-enable} (int fd, const void $\ast$payload, size\_\-t size)=0
+\begin{DoxyCompactList}\small\item\em Enable IO event triggering for queue. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1Queue_a00580bec19f1f7c554ca42ba06c6e2f5}{
+static \hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$ \hyperlink{classRdKafka_1_1Queue_a00580bec19f1f7c554ca42ba06c6e2f5}{create} (\hyperlink{classRdKafka_1_1Handle}{Handle} $\ast$handle)}
+\label{classRdKafka_1_1Queue_a00580bec19f1f7c554ca42ba06c6e2f5}
+
+\begin{DoxyCompactList}\small\item\em Create \hyperlink{classRdKafka_1_1Queue}{Queue} object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Queue}{Queue} interface. Create a new message queue. \hyperlink{classRdKafka_1_1Message}{Message} queues allows the application to re-\/route consumed messages from multiple topic+partitions into one single queue point. This queue point, containing messages from a number of topic+partitions, may then be served by a single \hyperlink{classRdKafka_1_1Queue_aa8a0ff1e3df108e8bb6c9ef611f5eef4}{consume()} method, rather than one per topic+partition combination.
+
+See the \hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{RdKafka::Consumer::start()}, \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{RdKafka::Consumer::consume()}, and \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{RdKafka::Consumer::consume\_\-callback()} methods that take a queue as the first parameter for more information. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Queue_a49827afcb8804719ffc23d120915b371}{
+\index{RdKafka::Queue@{RdKafka::Queue}!forward@{forward}}
+\index{forward@{forward}!RdKafka::Queue@{RdKafka::Queue}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}virtual ErrorCode RdKafka::Queue::forward ({\bf Queue} $\ast$ {\em dst})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Queue_a49827afcb8804719ffc23d120915b371}
+
+
+Forward/re-\/route queue to {\ttfamily dst}. If {\ttfamily dst} is {\ttfamily NULL}, the forwarding is removed. The internal refcounts for both queues are increased.
+
+\begin{DoxyRemark}{Remarks}
+Regardless of whether {\ttfamily dst} is NULL or not, after calling this function, {\ttfamily src} will not forward it's fetch queue to the consumer queue. 
+\end{DoxyRemark}
+\hypertarget{classRdKafka_1_1Queue_aa8a0ff1e3df108e8bb6c9ef611f5eef4}{
+\index{RdKafka::Queue@{RdKafka::Queue}!consume@{consume}}
+\index{consume@{consume}!RdKafka::Queue@{RdKafka::Queue}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Message}$\ast$ RdKafka::Queue::consume (int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Queue_aa8a0ff1e3df108e8bb6c9ef611f5eef4}
+
+
+Consume message or get error event from the queue. \begin{DoxyRemark}{Remarks}
+Use {\ttfamily delete} to free the message.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+One of:
+\begin{DoxyItemize}
+\item proper message (\hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} is ERR\_\-NO\_\-ERROR)
+\item error event (\hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} is != ERR\_\-NO\_\-ERROR)
+\item timeout due to no message or event in {\ttfamily timeout\_\-ms} (\hyperlink{classRdKafka_1_1Message_a90df1fd2a73a74220c9581e6bedb42f2}{RdKafka::Message::err()} is ERR\_\-\_\-TIMED\_\-OUT) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Queue_a4d37e2fdf4579876f4ae3f315bc2e74d}{
+\index{RdKafka::Queue@{RdKafka::Queue}!poll@{poll}}
+\index{poll@{poll}!RdKafka::Queue@{RdKafka::Queue}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RdKafka::Queue::poll (int {\em timeout\_\-ms})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Queue_a4d37e2fdf4579876f4ae3f315bc2e74d}
+
+
+Poll queue, serving any enqueued callbacks. \begin{DoxyRemark}{Remarks}
+Must NOT be used for queues containing messages.
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+the number of events served or 0 on timeout. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Queue_a91ec180ff3b7f3a97be7b7e30163625c}{
+\index{RdKafka::Queue@{RdKafka::Queue}!io\_\-event\_\-enable@{io\_\-event\_\-enable}}
+\index{io\_\-event\_\-enable@{io\_\-event\_\-enable}!RdKafka::Queue@{RdKafka::Queue}}
+\subsubsection[{io\_\-event\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RdKafka::Queue::io\_\-event\_\-enable (int {\em fd}, \/  const void $\ast$ {\em payload}, \/  size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1Queue_a91ec180ff3b7f3a97be7b7e30163625c}
+
+
+Enable IO event triggering for queue. To ease integration with IO based polling loops this API allows an application to create a separate file-\/descriptor that librdkafka will write {\ttfamily payload} (of size {\ttfamily size}) to whenever a new element is enqueued on a previously empty queue.
+
+To remove event triggering call with {\ttfamily fd} = -\/1.
+
+librdkafka will maintain a copy of the {\ttfamily payload}.
+
+\begin{DoxyRemark}{Remarks}
+When using forwarded queues the IO event must only be enabled on the final forwarded-\/to (destination) queue. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

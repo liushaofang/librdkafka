@@ -1,0 +1,79 @@
+\hypertarget{structrd__kafka__group__info}{
+\section{rd\_\-kafka\_\-group\_\-info Struct Reference}
+\label{structrd__kafka__group__info}\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}}
+}
+
+
+Group information.  
+
+
+{\ttfamily \#include $<$rdkafka.h$>$}Collaboration diagram for rd\_\-kafka\_\-group\_\-info:\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct rd\_\-kafka\_\-metadata\_\-broker \hyperlink{structrd__kafka__group__info_a379c4e9a10ec2ae18dd7dabe660b29b0}{broker}
+\item 
+char $\ast$ \hyperlink{structrd__kafka__group__info_a7f8c8687af579ca25e1fb088b3eae4a3}{group}
+\item 
+\hyperlink{rdkafka_8h_a03509bab51072c72a8dcf52337e6d5cb}{rd\_\-kafka\_\-resp\_\-err\_\-t} \hyperlink{structrd__kafka__group__info_ad8ad977cc6c3d8bd053afdc88876fd31}{err}
+\item 
+char $\ast$ \hyperlink{structrd__kafka__group__info_a5160a6f8963024c42164aa828eead885}{state}
+\item 
+char $\ast$ \hyperlink{structrd__kafka__group__info_ab0f0461bf50a6a25ccab90e93d47d31f}{protocol\_\-type}
+\item 
+char $\ast$ \hyperlink{structrd__kafka__group__info_aab4f80bfc4e0ce38774884e599690a68}{protocol}
+\item 
+struct \hyperlink{structrd__kafka__group__member__info}{rd\_\-kafka\_\-group\_\-member\_\-info} $\ast$ \hyperlink{structrd__kafka__group__info_a98032bb5d44fcd6fda60e0374ad8a2d4}{members}
+\item 
+int \hyperlink{structrd__kafka__group__info_a4b0bd08097252d3d086610e63f58bf49}{member\_\-cnt}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Group information. 
+
+\subsection{Field Documentation}
+\hypertarget{structrd__kafka__group__info_a379c4e9a10ec2ae18dd7dabe660b29b0}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!broker@{broker}}
+\index{broker@{broker}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{broker}]{\setlength{\rightskip}{0pt plus 5cm}struct rd\_\-kafka\_\-metadata\_\-broker {\bf rd\_\-kafka\_\-group\_\-info::broker}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{structrd__kafka__group__info_a379c4e9a10ec2ae18dd7dabe660b29b0}
+Originating broker info \hypertarget{structrd__kafka__group__info_a7f8c8687af579ca25e1fb088b3eae4a3}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!group@{group}}
+\index{group@{group}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{group}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf rd\_\-kafka\_\-group\_\-info::group}}}
+\label{structrd__kafka__group__info_a7f8c8687af579ca25e1fb088b3eae4a3}
+Group name \hypertarget{structrd__kafka__group__info_ad8ad977cc6c3d8bd053afdc88876fd31}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!err@{err}}
+\index{err@{err}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rd\_\-kafka\_\-resp\_\-err\_\-t} {\bf rd\_\-kafka\_\-group\_\-info::err}}}
+\label{structrd__kafka__group__info_ad8ad977cc6c3d8bd053afdc88876fd31}
+Broker-\/originated error \hypertarget{structrd__kafka__group__info_a5160a6f8963024c42164aa828eead885}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!state@{state}}
+\index{state@{state}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf rd\_\-kafka\_\-group\_\-info::state}}}
+\label{structrd__kafka__group__info_a5160a6f8963024c42164aa828eead885}
+Group state \hypertarget{structrd__kafka__group__info_ab0f0461bf50a6a25ccab90e93d47d31f}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!protocol\_\-type@{protocol\_\-type}}
+\index{protocol\_\-type@{protocol\_\-type}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{protocol\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf rd\_\-kafka\_\-group\_\-info::protocol\_\-type}}}
+\label{structrd__kafka__group__info_ab0f0461bf50a6a25ccab90e93d47d31f}
+Group protocol type \hypertarget{structrd__kafka__group__info_aab4f80bfc4e0ce38774884e599690a68}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!protocol@{protocol}}
+\index{protocol@{protocol}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf rd\_\-kafka\_\-group\_\-info::protocol}}}
+\label{structrd__kafka__group__info_aab4f80bfc4e0ce38774884e599690a68}
+Group protocol \hypertarget{structrd__kafka__group__info_a98032bb5d44fcd6fda60e0374ad8a2d4}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!members@{members}}
+\index{members@{members}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{members}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rd\_\-kafka\_\-group\_\-member\_\-info}$\ast$ {\bf rd\_\-kafka\_\-group\_\-info::members}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{structrd__kafka__group__info_a98032bb5d44fcd6fda60e0374ad8a2d4}
+Group members \hypertarget{structrd__kafka__group__info_a4b0bd08097252d3d086610e63f58bf49}{
+\index{rd\_\-kafka\_\-group\_\-info@{rd\_\-kafka\_\-group\_\-info}!member\_\-cnt@{member\_\-cnt}}
+\index{member\_\-cnt@{member\_\-cnt}!rd_kafka_group_info@{rd\_\-kafka\_\-group\_\-info}}
+\subsubsection[{member\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rd\_\-kafka\_\-group\_\-info::member\_\-cnt}}}
+\label{structrd__kafka__group__info_a4b0bd08097252d3d086610e63f58bf49}
+Group member count 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{rdkafka_8h}{rdkafka.h}\end{DoxyCompactItemize}

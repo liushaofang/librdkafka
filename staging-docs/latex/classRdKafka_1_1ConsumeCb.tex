@@ -1,0 +1,32 @@
+\hypertarget{classRdKafka_1_1ConsumeCb}{
+\section{RdKafka::ConsumeCb Class Reference}
+\label{classRdKafka_1_1ConsumeCb}\index{RdKafka::ConsumeCb@{RdKafka::ConsumeCb}}
+}
+
+
+Consume callback class.  
+
+
+{\ttfamily \#include $<$rdkafkacpp.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRdKafka_1_1ConsumeCb_ae17e0e46606ef3ae1bbfedfff843d08c}{consume\_\-cb} (\hyperlink{classRdKafka_1_1Message}{Message} \&message, void $\ast$opaque)=0
+\begin{DoxyCompactList}\small\item\em The consume callback is used with \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{RdKafka::Consumer::consume\_\-callback()} methods and will be called for each consumed {\ttfamily message}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Consume callback class. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1ConsumeCb_ae17e0e46606ef3ae1bbfedfff843d08c}{
+\index{RdKafka::ConsumeCb@{RdKafka::ConsumeCb}!consume\_\-cb@{consume\_\-cb}}
+\index{consume\_\-cb@{consume\_\-cb}!RdKafka::ConsumeCb@{RdKafka::ConsumeCb}}
+\subsubsection[{consume\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RdKafka::ConsumeCb::consume\_\-cb ({\bf Message} \& {\em message}, \/  void $\ast$ {\em opaque})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRdKafka_1_1ConsumeCb_ae17e0e46606ef3ae1bbfedfff843d08c}
+
+
+The consume callback is used with \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{RdKafka::Consumer::consume\_\-callback()} methods and will be called for each consumed {\ttfamily message}. The callback interface is optional but provides increased performance. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/\hyperlink{rdkafkacpp_8h}{rdkafkacpp.h}\end{DoxyCompactItemize}

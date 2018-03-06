@@ -1,0 +1,7 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="rd_kafka_err_desc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structrd__kafka__err__desc.html",tooltip="Error code value, name and description. Typically for use with language bindings..."];
+}
